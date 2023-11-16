@@ -11,7 +11,7 @@ import SwiftUI
 struct PasswordrApp: App {
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            HomeView()
         }
     }
 }

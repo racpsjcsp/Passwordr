@@ -1,5 +1,5 @@
 //
-//  LoginButton.swift
+//  FaceIDButton.swift
 //  Passwordr
 //
 //  Created by Rafael Plinio on 15/11/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginButton: View {
+struct FaceIDButton: View {
     var image: String?
     var showImage = true
     var text: String
@@ -31,6 +31,6 @@ struct LoginButton: View {
 
 struct LoginButton_Previews: PreviewProvider {
     static var previews: some View {
-        LoginButton(image: "faceid", text: "Login with FaceID")
+        FaceIDButton(image: "faceid", text: "Login with FaceID")
     }
 }

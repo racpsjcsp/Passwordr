@@ -1,5 +1,5 @@
 //
-//  LoginTitle.swift
+//  FaceIDTitle.swift
 //  Passwordr
 //
 //  Created by Rafael Plinio on 15/11/23.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct LoginTitle: View {
+struct FaceIDTitle: View {
     var body: some View {
         Text("Passwordr")
             .bold()
@@ -16,9 +16,9 @@ struct LoginTitle: View {
     }
 }
 
-struct LoginTitle_Previews: PreviewProvider {
+struct FaceIDTitle_Previews: PreviewProvider {
     static var previews: some View {
-        LoginTitle()
+        FaceIDTitle()
             .background(LinearGradient(colors: [.red, .orange, .yellow, .green, .blue, .indigo, .purple],
                                        startPoint: .topLeading, endPoint: .bottomTrailing))
     }
