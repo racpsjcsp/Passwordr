@@ -6,12 +6,22 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PasswordrApp: App {
+
+//    let container: ModelContainer = {
+//        let schema = Schema([Credential.self])
+//        let container = try! ModelContainer(for: schema, configurations: [])
+//        return container
+//    }()
+
     var body: some Scene {
         WindowGroup {
             HomeView()
         }
+//        .modelContainer(container)
+        .modelContainer(for: [Credential.self])
     }
 }
