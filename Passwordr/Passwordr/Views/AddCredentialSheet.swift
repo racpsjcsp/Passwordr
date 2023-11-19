@@ -18,8 +18,14 @@ struct AddCredentialSheet: View {
         NavigationStack {
             Form {
                 TextField("Name", text: $name)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
                 TextField("Login/Username", text: $username)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
                 TextField("Password", text: $password)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
             }
             .navigationTitle("New Credential")
             .navigationBarTitleDisplayMode(.large)

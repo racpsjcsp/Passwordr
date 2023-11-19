@@ -14,25 +14,32 @@ struct HomeView: View {
     @State private var isShowingCredentialSheet = false
     @Query(sort: \Credential.name) private var credentials: [Credential]
     @State private var credentialToEdit: Credential?
+    private let rainbowColors: [Color] = [.red, .orange, .yellow, .green, .blue, .indigo, .purple]
     
     var body: some View {
         if viewModel.isAuthenticated {
             NavigationStack {
                 List {
                     ForEach(credentials) { credential in
-                        DisclosureGroup {
-                            UsernameCell(credential: credential)
-                                .onEditTap(action: {
-                                    credentialToEdit = credential
-                                }, credential: Credential(name: credential.name, username: credential.username, password: credential.password))
-                            PasswordCell(credential: credential, password: .constant(credential.password))
-                        } label: {
-                            HStack {
-                                Text(credential.name)
-                                Spacer()
+                        Section {
+                            DisclosureGroup {
+                                UsernameCell(credential: credential)
+                                    .onEditTap(action: {
+                                        credentialToEdit = credential
+                                    }, credential: Credential(name: credential.name,
+                                                              username: credential.username,
+                                                              password: credential.password))
+                                
+                                PasswordCell(credential: credential, password: .constant(credential.password))
+                            } label: {
+                                HStack {
+                                    Text(credential.name)
+                                    Spacer()
+                                }
                             }
                         }
-
+                        .listSectionSpacing(.custom(4))
+                        
                     }
                     .onDelete(perform: { indexSet in
                         for index in indexSet {
@@ -42,15 +49,14 @@ struct HomeView: View {
                 }
                 .navigationTitle("Credentials")
                 .navigationBarTitleDisplayMode(.inline)
-                .listRowSeparator(.visible)
                 .sheet(isPresented: $isShowingCredentialSheet) { AddCredentialSheet() }
                 .sheet(item: $credentialToEdit, content: { credential in
                     UpdateCredentialSheet(credential: credential)
                 })
                 .toolbar {
-                        Button("Add Credential", systemImage: "plus") {
-                            isShowingCredentialSheet = true
-                        }
+                    Button("Add Credential", systemImage: "plus") {
+                        isShowingCredentialSheet = true
+                    }
                 }
             }
             .overlay {
@@ -76,7 +82,7 @@ struct HomeView: View {
                     }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(LinearGradient(colors: [.red, .orange, .yellow, .green, .blue, .indigo, .purple],
+            .background(LinearGradient(colors: rainbowColors,
                                        startPoint: .topLeading, endPoint: .bottomTrailing))
         }
     }

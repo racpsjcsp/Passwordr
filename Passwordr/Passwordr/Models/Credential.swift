@@ -10,9 +10,9 @@ import SwiftData
 
 @Model
 class Credential {
-    var name: String = "testeNameame"
-    var username: String = "testeUsername"
-    var password: String = "testePassword"
+    var name: String
+    @Attribute(.allowsCloudEncryption) var username: String
+    @Attribute(.allowsCloudEncryption) var password: String
     
     init(name: String, username: String, password: String) {
         self.name = name

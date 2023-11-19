@@ -15,8 +15,14 @@ struct UpdateCredentialSheet: View {
         NavigationStack {
             Form(content: {
                 TextField("Name", text: $credential.name)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
                 TextField("Login/Username", text: $credential.username)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
                 TextField("Password", text: $credential.password)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
             })
             .navigationTitle("Edit Credential")
             .navigationBarTitleDisplayMode(.large)
