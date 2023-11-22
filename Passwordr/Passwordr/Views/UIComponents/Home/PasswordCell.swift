@@ -42,6 +42,7 @@ struct PasswordCell: View {
                             isSecureField.toggle()
                         }
                         .offset(x: 16, y: 0)
+                        .foregroundStyle(Color("myGreen"))
                 }
                 .overlay(alignment: .leading) {
                     Image(systemName: "doc.on.doc")
@@ -56,14 +57,15 @@ struct PasswordCell: View {
                             }
                         }
                         .offset(x: -36, y: 0)
+                        .foregroundStyle(Color("myGreen"))
                 }
                 
                 if copied {
                     Text("Copied to clipboard!")
                         .frame(width: 170, height: 30)
-                        .foregroundStyle(.pink)
+                        .foregroundStyle(.green)
                         .background(Capsule())
-                        .position(x: geo.frame(in: .local).width/2)//, y: 5)
+                        .position(x: geo.frame(in: .local).width/2)
                         .transition(.move(edge: .top))
                         .padding(.top)
                         .animation(.easeInOut(duration: 2), value: 1.0)
@@ -76,5 +78,5 @@ struct PasswordCell: View {
 
 
 #Preview {
-    PasswordCell(credential: Credential(name: "abc", username: "def", password: "ghi"), password: .constant("password"))
+    PasswordCell(credential: Credential(name: "name", username: "username", password: "password", oldPassword: "old password (optional)", creationDate: "10/10/1985", lastChanged: "10/10/2023"), password: .constant("password"))
 }

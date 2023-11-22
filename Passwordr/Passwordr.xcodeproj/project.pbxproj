@@ -11,6 +11,7 @@
 		46212FA62B07A32900FC2600 /* AddCredentialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */; };
 		46212FA82B07B11100FC2600 /* UpdateCredentialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */; };
 		4640B0462B0A311B00ED2705 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4640B0452B0A311B00ED2705 /* ToastView.swift */; };
+		4640B0482B0C0CFF00ED2705 /* PasswordrSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4640B0472B0C0CFF00ED2705 /* PasswordrSplashView.swift */; };
 		46B3C1B92B097AFD00CB98DC /* UsernameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3C1B82B097AFD00CB98DC /* UsernameCell.swift */; };
 		46B3C1BB2B097C0900CB98DC /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3C1BA2B097C0900CB98DC /* PasswordCell.swift */; };
 		46BA23762B03D6BC001FA81E /* PasswordrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA23752B03D6BC001FA81E /* PasswordrApp.swift */; };
@@ -27,6 +28,7 @@
 		46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCredentialSheet.swift; sourceTree = "<group>"; };
 		46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialSheet.swift; sourceTree = "<group>"; };
 		4640B0452B0A311B00ED2705 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		4640B0472B0C0CFF00ED2705 /* PasswordrSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordrSplashView.swift; sourceTree = "<group>"; };
 		468FB9692B065C6D00D215C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		46B3C1B82B097AFD00CB98DC /* UsernameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameCell.swift; sourceTree = "<group>"; };
 		46B3C1BA2B097C0900CB98DC /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			children = (
 				468FB9692B065C6D00D215C8 /* Info.plist */,
 				46BA23752B03D6BC001FA81E /* PasswordrApp.swift */,
+				4640B0472B0C0CFF00ED2705 /* PasswordrSplashView.swift */,
 				46BA23862B04EC5A001FA81E /* Views */,
 				46212FA12B0795F900FC2600 /* ViewModels */,
 				46212FA22B07962300FC2600 /* Models */,
@@ -130,8 +133,8 @@
 			children = (
 				46BA23872B04ECE4001FA81E /* HomeView.swift */,
 				46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */,
-				46BA23832B04EBCD001FA81E /* UIComponents */,
 				46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */,
+				46BA23832B04EBCD001FA81E /* UIComponents */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -213,6 +216,7 @@
 				46BA23852B04EBF8001FA81E /* FaceIDButton.swift in Sources */,
 				46B3C1B92B097AFD00CB98DC /* UsernameCell.swift in Sources */,
 				4640B0462B0A311B00ED2705 /* ToastView.swift in Sources */,
+				4640B0482B0C0CFF00ED2705 /* PasswordrSplashView.swift in Sources */,
 				46BA238A2B04ED82001FA81E /* HomeViewViewModel.swift in Sources */,
 				46BA238C2B04EE2A001FA81E /* FaceIDTitle.swift in Sources */,
 				46BA23762B03D6BC001FA81E /* PasswordrApp.swift in Sources */,

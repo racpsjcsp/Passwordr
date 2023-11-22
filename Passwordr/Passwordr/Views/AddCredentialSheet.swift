@@ -13,7 +13,11 @@ struct AddCredentialSheet: View {
     @State private var name: String = ""
     @State private var username: String = ""
     @State private var password: String = ""
-    
+    @State private var oldPassword: String = ""
+    @State private var creationDate: String = ""
+    @State private var lastChanged: String = ""
+
+
     var body: some View {
         NavigationStack {
             Form {
@@ -26,6 +30,10 @@ struct AddCredentialSheet: View {
                 TextField("Password", text: $password)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
+                TextField("Old Password (Optional)", text: $oldPassword)
+                    .textInputAutocapitalization(.never)
+                    .autocorrectionDisabled()
+
             }
             .navigationTitle("New Credential")
             .navigationBarTitleDisplayMode(.large)
@@ -36,8 +44,15 @@ struct AddCredentialSheet: View {
                 
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Button("Save") {
-                        // add string validations later...
-                        let credential = Credential(name: name, username: username, password: password)
+                        /// add string validations later...
+                        let credential = Credential(name: name, username: username, password: password, oldPassword: oldPassword, creationDate: creationDate, lastChanged: lastChanged)
+
+                        if !oldPassword.isEmpty && oldPassword != password {
+                            credential.lastChanged = credential.getCurrentDate()
+                        }
+
+                        credential.creationDate = credential.getCurrentDate()
+
                         context.insert(credential)
                         dismiss()
                         /// save is automatic in swiftData, so the line below is not needed, just for learning purpose

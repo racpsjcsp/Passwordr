@@ -10,9 +10,8 @@ import SwiftUI
 struct FaceIDTitle: View {
     var body: some View {
         Text("Passwordr")
-            .bold()
             .font(.largeTitle)
-            .foregroundStyle(Color.white.shadow(.inner(color: .black, radius: 1, x: 2, y: 2)))
+            .foregroundStyle(Color("myGreen"))
     }
 }
 

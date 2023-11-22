@@ -19,7 +19,7 @@ struct PasswordrApp: App {
 
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            PasswordrSplashView()
         }
 //        .modelContainer(container)
         .modelContainer(for: [Credential.self])

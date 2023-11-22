@@ -17,32 +17,32 @@ extension HomeView {
         @Published private(set) var errorDescription: String?
         @Published var showAlert = false
         
-        // On initialize of this class, get the biometryType, which for this app is only FaceID
+        /// On initialize of this class, get the biometryType, which for this app is only FaceID
         init() {
             getBiometryType()
         }
         
         func getBiometryType() {
-            // canEvaluatePolicy will let us know if the user's device supports biometrics authentication
+            /// canEvaluatePolicy will let us know if the user's device supports biometrics authentication
             canEvaluatePolicy = context.canEvaluatePolicy(.deviceOwnerAuthentication, error: nil)
             
-            // Getting the biometryType - in other words, if the device supports FaceID, TouchID, or doesn't support biometrics auth
+            /// Getting the biometryType - in other words, if the device supports FaceID, TouchID, or doesn't support biometrics auth
             biometryType = context.biometryType
         }
         
         func authenticateWithFaceID() async {
-            // Resetting the LAContext so on the next login, biometrics are checked again
+            /// Resetting the LAContext so on the next login, biometrics are checked again
             context = LAContext()
             
-            // Only evaluatePolicy if device supports biometrics auth
+            /// Only evaluatePolicy if device supports biometrics auth
             if canEvaluatePolicy {
-                let reason = "TO UNLOCK PASSWORDR"
-                
+                let reason = "To Unlock Passwordr"
+
                 do {
-                    // evaluatePolicy will check if user is the device's owner, returns a boolean value that'll let us know if it successfully identified the user
+                    /// evaluatePolicy will check if user is the device's owner, returns a boolean value that'll let us know if it successfully identified the user
                     let success = try await context.evaluatePolicy(.deviceOwnerAuthentication, localizedReason: reason)
                     
-                    // Only if it's a success, we'll set isAuthenticated to true
+                    /// Only if it's a success, set isAuthenticated to true
                     if success {
                         Task {
                             await MainActor.run {
@@ -66,8 +66,7 @@ extension HomeView {
                 }
             }
         }
-        
-        // Logout the user - just setting back isAuthenticated to false
+
         func logout() {
             isAuthenticated = false
         }

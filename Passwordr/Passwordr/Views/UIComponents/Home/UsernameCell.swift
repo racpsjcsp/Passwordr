@@ -10,6 +10,7 @@ import SwiftUI
 struct UsernameCell: View {
     let credential: Credential
     var onEditTap: (() -> Void)?
+    @Binding var username: String
     @State private var credentialToEdit: Credential?
     private let pasteboard = UIPasteboard.general
     @State private var copied = false {
@@ -28,7 +29,8 @@ struct UsernameCell: View {
         GeometryReader { geo in
             ZStack {
                 HStack {
-                    Text(credential.username)
+                    TextField(credential.username, text: $username)
+                        .disabled(true)
                     Spacer()
                 }
                 .overlay(alignment: .trailing) {
@@ -37,6 +39,7 @@ struct UsernameCell: View {
                             onEditTap?()
                         }
                         .offset(x: 16, y: 0)
+                        .foregroundStyle(Color("myGreen"))
                 }
                 .overlay(alignment: .leading) {
                     Image(systemName: "doc.on.doc")
@@ -51,14 +54,15 @@ struct UsernameCell: View {
                             }
                         }
                         .offset(x: -36, y: 0)
+                        .foregroundStyle(Color("myGreen"))
                 }
                 
                 if copied {
                     Text("Copied to clipboard!")
                         .frame(width: 170, height: 28)
-                        .foregroundStyle(.pink)
+                        .foregroundStyle(.green)
                         .background(Capsule())
-                        .position(x: geo.frame(in: .local).width/2)//, y: 5)
+                        .position(x: geo.frame(in: .local).width/2)
                         .transition(.move(edge: .top))
                         .padding(.top)
                         .animation(.easeInOut(duration: 2), value: 1.0)
@@ -69,13 +73,8 @@ struct UsernameCell: View {
     }
 }
 
-#Preview {
-    UsernameCell(credential: Credential(name: "abc", username: "def", password: "ghi"))
-}
-
 extension UsernameCell {
     func onEditTap(action: @escaping (() -> Void), credential: Credential) -> UsernameCell {
-        UsernameCell(credential: Credential(name: credential.name, username: credential.username, password: credential.password), onEditTap: action)
+        UsernameCell(credential: Credential(name: "name", username: "username", password: "password", oldPassword: "old password (optional)", creationDate: "10/10/1985", lastChanged: "10/10/2023"), onEditTap: action, username: .constant(username))
     }
 }
-
