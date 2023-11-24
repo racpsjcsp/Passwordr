@@ -29,7 +29,7 @@ struct PasswordCell: View {
             ZStack {
                 HStack {
                     if isSecureField {
-                        SecureField("Password", text: $password)
+                        SecureField(K.Strings.password, text: $password)
                             .disabled(true)
                     } else {
                         TextField(credential.password, text: $password)
@@ -37,38 +37,28 @@ struct PasswordCell: View {
                     }
                 }
                 .overlay(alignment: .trailing) {
-                    Image(systemName: isSecureField ? "eye" : "eye.slash")
+                    Image(systemName: isSecureField ? K.Strings.eye : K.Strings.eyeSlash)
                         .onTapGesture {
                             isSecureField.toggle()
                         }
                         .offset(x: 16, y: 0)
-                        .foregroundStyle(Color("myGreen"))
+                        .foregroundStyle(Color(K.Strings.myGreen))
                 }
                 .overlay(alignment: .leading) {
-                    Image(systemName: "doc.on.doc")
+                    Image(systemName: K.Strings.docOndoc)
                         .onTapGesture {
                             pasteboard.string = credential.password
-                            if let string = pasteboard.string {
-                                print("clipboard string: \(string)")
-                            }
                             
                             withAnimation {
                                 copied = true
                             }
                         }
                         .offset(x: -36, y: 0)
-                        .foregroundStyle(Color("myGreen"))
+                        .foregroundStyle(Color(K.Strings.myGreen))
                 }
                 
                 if copied {
-                    Text("Copied to clipboard!")
-                        .frame(width: 170, height: 30)
-                        .foregroundStyle(.green)
-                        .background(Capsule())
-                        .position(x: geo.frame(in: .local).width/2)
-                        .transition(.move(edge: .top))
-                        .padding(.top)
-                        .animation(.easeInOut(duration: 2), value: 1.0)
+                    ToastView(copied: copied)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

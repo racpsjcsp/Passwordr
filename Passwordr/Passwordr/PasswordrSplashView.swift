@@ -17,7 +17,7 @@ struct PasswordrSplashView: View {
                 if isActive {
                     HomeView()
                 } else {
-                    Image("passwordrLogo")
+                    Image(K.Strings.passwordrLogo)
                         .resizable()
                         .scaledToFit()
                 }

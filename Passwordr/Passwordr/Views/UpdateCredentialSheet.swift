@@ -20,17 +20,17 @@ struct UpdateCredentialSheet: View {
                 oldPassword
                 credentialInfo
             }
-            .navigationTitle("Edit Credential")
+            .navigationTitle(K.Strings.updateCredentialNavTitle)
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItemGroup(placement: .topBarLeading) {
-                    Button("Cancel") {
+                    Button(K.Strings.cancelButton) {
                         dismiss()
                     }
                 }
 
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button("Save") {
+                    Button(K.Strings.saveButton) {
                         if currentPassword != credential.password || currentOldPassword != credential.oldPassword {
                             credential.lastChanged = credential.getCurrentDate()
                         }
@@ -55,19 +55,19 @@ struct UpdateCredentialSheet: View {
 private extension UpdateCredentialSheet {
     var credentialFields: some View {
         Section {
-            TextField("Name", text: $credential.name)
+            TextField(K.Strings.name, text: $credential.name)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
-            TextField("Login/Username", text: $credential.username)
+            TextField(K.Strings.username, text: $credential.username)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
-            TextField("Password", text: $credential.password)
+            TextField(K.Strings.password, text: $credential.password)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
         } header: {
-            Text("Credential")
+            Text(K.Strings.updateCredentialHeader)
         } footer: {
-            Text("Edit any field as needed")
+            Text(K.Strings.updateCredentialFooter)
         }
         .headerProminence(.increased)
     }
@@ -78,17 +78,17 @@ private extension UpdateCredentialSheet {
                 .disabled(true)
                 .colorMultiply(.gray)
         } header: {
-            Text("Old Password")
+            Text(K.Strings.updateCredentialOldPasswordHeader)
         }
         .headerProminence(.increased)
     }
 
     var credentialInfo: some View {
         Section {
-            Text("Credential entry date: \($credential.creationDate.wrappedValue)")
-            Text("Password last update: \($credential.lastChanged.wrappedValue)")
+            Text("\(K.Strings.updateCredentialInfoCreated) \($credential.creationDate.wrappedValue)")
+            Text("\(K.Strings.updateCredentialInfoUpdated) \($credential.lastChanged.wrappedValue)")
         } header: {
-            Text("Information")
+            Text(K.Strings.updateCredentialInfoHeader)
         }
         .headerProminence(.increased)
     }

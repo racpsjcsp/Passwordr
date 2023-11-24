@@ -16,7 +16,7 @@ extension HomeView {
         @Published private(set) var isAuthenticated = false
         @Published private(set) var errorDescription: String?
         @Published var showAlert = false
-        
+
         /// On initialize of this class, get the biometryType, which for this app is only FaceID
         init() {
             getBiometryType()
@@ -36,7 +36,7 @@ extension HomeView {
             
             /// Only evaluatePolicy if device supports biometrics auth
             if canEvaluatePolicy {
-                let reason = "To Unlock Passwordr"
+                let reason = K.Strings.unlockPasswordr
 
                 do {
                     /// evaluatePolicy will check if user is the device's owner, returns a boolean value that'll let us know if it successfully identified the user

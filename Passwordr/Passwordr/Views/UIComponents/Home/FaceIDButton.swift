@@ -15,7 +15,7 @@ struct FaceIDButton: View {
     var body: some View {
         HStack {
             if showImage {
-                Image(systemName: image ?? "person.fill")
+                Image(systemName: image ?? K.Strings.personFill)
             }
             
             Text(text)

@@ -8,18 +8,7 @@
 import SwiftUI
 
 struct ToastView: View {
-    @State var copied2: Bool = false {
-        didSet {
-            if copied2 {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                    withAnimation {
-                        copied2 = false
-                    }
-                }
-            }
-        }
-    }
-    @State private var copied = false {
+    @State var copied: Bool = false {
         didSet {
             if copied {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
@@ -33,23 +22,20 @@ struct ToastView: View {
     
     var body: some View {
         GeometryReader { geo in
-            ZStack {
-                if copied2 {
-                    Text("Copied to clipboard!")
-                        .frame(width: 170, height: 28)
-                        .foregroundStyle(.pink)
-                        .background(Capsule())
-                        .position(x: geo.frame(in: .local).width/2)//, y: 5)
-                        .transition(.move(edge: .top))
-                        .padding(.top)
-                        .animation(.easeInOut(duration: 2), value: 1.0)
-                }
+            if copied {
+                Text(K.Strings.clipboardMessage)
+                    .frame(width: 170, height: 28)
+                    .foregroundStyle(.red)
+                    .background(Capsule())
+                    .position(x: geo.frame(in: .local).width/2)
+                    .transition(.move(edge: .top))
+                    .padding(.top)
+                    .animation(.easeInOut(duration: 2), value: 1.0)
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
 }
 
 #Preview {
-    ToastView(copied2: true)
+    ToastView(copied: true)
 }

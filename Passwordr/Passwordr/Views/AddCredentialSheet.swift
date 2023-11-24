@@ -21,29 +21,29 @@ struct AddCredentialSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Name", text: $name)
+                TextField(K.Strings.name, text: $name)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
-                TextField("Login/Username", text: $username)
+                TextField(K.Strings.username, text: $username)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
-                TextField("Password", text: $password)
+                TextField(K.Strings.password, text: $password)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
-                TextField("Old Password (Optional)", text: $oldPassword)
+                TextField(K.Strings.oldPassword, text: $oldPassword)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
 
             }
-            .navigationTitle("New Credential")
+            .navigationTitle(K.Strings.addCredentialNavTitle)
             .navigationBarTitleDisplayMode(.large)
             .toolbar {
                 ToolbarItemGroup(placement: .topBarLeading) {
-                    Button("Cancel") { dismiss() }
+                    Button(K.Strings.cancelButton) { dismiss() }
                 }
                 
                 ToolbarItemGroup(placement: .topBarTrailing) {
-                    Button("Save") {
+                    Button(K.Strings.saveButton) {
                         /// add string validations later...
                         let credential = Credential(name: name, username: username, password: password, oldPassword: oldPassword, creationDate: creationDate, lastChanged: lastChanged)
 
@@ -55,9 +55,6 @@ struct AddCredentialSheet: View {
 
                         context.insert(credential)
                         dismiss()
-                        /// save is automatic in swiftData, so the line below is not needed, just for learning purpose
-//                        try! context.save()
-                        /// try do catch block is necessary
                     }
                 }
             }

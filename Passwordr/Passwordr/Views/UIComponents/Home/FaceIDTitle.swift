@@ -9,16 +9,14 @@ import SwiftUI
 
 struct FaceIDTitle: View {
     var body: some View {
-        Text("Passwordr")
+        Text(K.Strings.appTitle)
             .font(.largeTitle)
-            .foregroundStyle(Color("myGreen"))
+            .foregroundStyle(Color(K.Strings.myGreen))
     }
 }
 
 struct FaceIDTitle_Previews: PreviewProvider {
     static var previews: some View {
         FaceIDTitle()
-            .background(LinearGradient(colors: [.red, .orange, .yellow, .green, .blue, .indigo, .purple],
-                                       startPoint: .topLeading, endPoint: .bottomTrailing))
     }
 }

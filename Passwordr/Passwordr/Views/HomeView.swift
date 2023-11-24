@@ -14,7 +14,6 @@ struct HomeView: View {
     @State private var isShowingCredentialSheet = false
     @Query(sort: \Credential.name) private var credentials: [Credential]
     @State private var credentialToEdit: Credential?
-    private let rainbowColors: [Color] = [.red, .orange, .yellow, .green, .blue, .indigo, .purple]
 
     var body: some View {
         if viewModel.isAuthenticated {
@@ -41,7 +40,7 @@ struct HomeView: View {
                                 }
                             }
                         }
-                        .tint(Color("myGreen"))
+                        .tint(Color(K.Strings.myGreen))
                         .listSectionSpacing(.custom(4))
 
                     }
@@ -51,30 +50,30 @@ struct HomeView: View {
                         }
                     })
                 }
-                .navigationTitle("Credentials")
+                .navigationTitle(K.Strings.homeNavTitle)
                 .navigationBarTitleDisplayMode(.inline)
                 .sheet(isPresented: $isShowingCredentialSheet) { AddCredentialSheet() }
                 .sheet(item: $credentialToEdit, content: { credential in
                     UpdateCredentialSheet(credential: credential)
                 })
                 .toolbar {
-                    Button("Add Credential", systemImage: "plus") {
+                    Button(K.Strings.homeAddCredentialTitle, systemImage: K.Strings.plus) {
                         isShowingCredentialSheet = true
                     }
                 }
-                .tint(Color("myGreen"))
+                .tint(Color(K.Strings.myGreen))
             }
             .overlay {
                 if credentials.isEmpty {
                     ContentUnavailableView(label: {
-                        Label("No Credentials", systemImage: "newspaper")
+                        Label(K.Strings.homeNoCredentialLabel, systemImage: K.Strings.newspaper)
                     }, description: {
-                        Text("Add a new credential to start")
+                        Text(K.Strings.homeCredentialDescription)
                     }, actions: {
-                        Button("Add Credential") {
+                        Button(K.Strings.homeAddCredentialTitle) {
                             isShowingCredentialSheet = true
                         }
-                        .tint(Color("myGreen"))
+                        .tint(Color(K.Strings.myGreen))
                     })
                 }
             }
@@ -82,7 +81,7 @@ struct HomeView: View {
             VStack(spacing: 40) {
                 FaceIDTitle()
 
-                FaceIDButton(image: "faceid", text: "Login with FaceID")
+                FaceIDButton(image: K.Strings.faceID, text: K.Strings.authScreenTitle)
                     .onTapGesture {
                         Task {
                             await viewModel.authenticateWithFaceID()
