@@ -15,7 +15,6 @@ struct K {
         static let authScreenTitle = "Login with Biometry"
         static let unlockPasswordr = "To unlock Passwordr"
 
-
         // HomeView
         static let homeNavTitle = "Credentials"
         static let homeNoCredentialLabel = "No Credentials"
@@ -29,7 +28,7 @@ struct K {
         static let updateCredentialNavTitle = "Edit Credential"
         static let updateCredentialHeader = "Credential"
         static let updateCredentialFooter = "Edit any field as needed"
-        static let updateCredentialOldPasswordHeader = "Old Password"
+        static let updateOldCredential = "Old Credential"
         static let updateCredentialInfoCreated = "Created:"
         static let updateCredentialInfoUpdated = "Updated:"
         static let updateCredentialInfoHeader = "Information"

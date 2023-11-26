@@ -10,27 +10,21 @@ import SwiftUI
 struct AddCredentialSheet: View {
     @Environment(\.modelContext) var context
     @Environment(\.dismiss) private var dismiss
-    @State private var name: String = ""
-    @State private var username: String = ""
-    @State private var password: String = ""
-    @State private var oldPassword: String = ""
-    @State private var creationDate: String = ""
-    @State private var lastChanged: String = ""
-
+    @StateObject private var viewModel = AddCredentialViewModel()
 
     var body: some View {
         NavigationStack {
             Form {
-                TextField(K.Strings.name, text: $name)
+                TextField(K.Strings.name, text: $viewModel.name)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
-                TextField(K.Strings.username, text: $username)
+                TextField(K.Strings.username, text: $viewModel.username)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
-                TextField(K.Strings.password, text: $password)
+                TextField(K.Strings.password, text: $viewModel.password)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
-                TextField(K.Strings.oldPassword, text: $oldPassword)
+                TextField(K.Strings.oldPassword, text: $viewModel.oldPassword)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
 
@@ -45,13 +39,16 @@ struct AddCredentialSheet: View {
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Button(K.Strings.saveButton) {
                         /// add string validations later...
-                        let credential = Credential(name: name, username: username, password: password, oldPassword: oldPassword, creationDate: creationDate, lastChanged: lastChanged)
+                        let credential = Credential(name: viewModel.name.capitalized,
+                                                    username: viewModel.username,
+                                                    password: viewModel.password,
+                                                    oldPassword: viewModel.oldPassword,
+                                                    creationDate: viewModel.creationDate,
+                                                    lastChanged: viewModel.lastChanged)
 
-                        if !oldPassword.isEmpty && oldPassword != password {
-                            credential.lastChanged = credential.getCurrentDate()
-                        }
+                        viewModel.updateLabelIfNeeded()
 
-                        credential.creationDate = credential.getCurrentDate()
+                        credential.creationDate = credential.creationDate.getCurrentDate()
 
                         context.insert(credential)
                         dismiss()

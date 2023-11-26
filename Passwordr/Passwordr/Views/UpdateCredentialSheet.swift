@@ -31,12 +31,9 @@ struct UpdateCredentialSheet: View {
 
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Button(K.Strings.saveButton) {
-                        if currentPassword != credential.password || currentOldPassword != credential.oldPassword {
-                            credential.lastChanged = credential.getCurrentDate()
-                        }
-
-                        if credential.oldPassword != currentPassword {
+                        if credential.oldPassword != currentPassword && credential.password != currentPassword {
                             credential.oldPassword = currentPassword
+                            credential.lastChanged = credential.lastChanged.getCurrentDate()
                         }
 
                         dismiss()
@@ -78,7 +75,7 @@ private extension UpdateCredentialSheet {
                 .disabled(true)
                 .colorMultiply(.gray)
         } header: {
-            Text(K.Strings.updateCredentialOldPasswordHeader)
+            Text(K.Strings.updateOldCredential)
         }
         .headerProminence(.increased)
     }
