@@ -10,6 +10,10 @@ import SwiftUI
 struct UpdateCredentialSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var credential: Credential
+    @State private var currentName = ""
+    @State private var currentOldName = ""
+    @State private var currentUsername = ""
+    @State private var currentOldUsername = ""
     @State private var currentPassword = ""
     @State private var currentOldPassword = ""
 
@@ -17,7 +21,7 @@ struct UpdateCredentialSheet: View {
         NavigationStack {
             Form {
                 credentialFields
-                oldPassword
+                oldCredential
                 credentialInfo
             }
             .navigationTitle(K.Strings.updateCredentialNavTitle)
@@ -25,29 +29,62 @@ struct UpdateCredentialSheet: View {
             .toolbar {
                 ToolbarItemGroup(placement: .topBarLeading) {
                     Button(K.Strings.cancelButton) {
+                        restoreOldValues()
                         dismiss()
                     }
                 }
 
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Button(K.Strings.saveButton) {
-                        if credential.oldPassword != currentPassword && credential.password != currentPassword {
-                            credential.oldPassword = currentPassword
-                            credential.lastChanged = credential.lastChanged.getCurrentDate()
-                        }
-
+                        updateOldCredentialsInfo()
                         dismiss()
                     }
                 }
             }
         }
         .onAppear {
-            currentPassword = credential.password
-            currentOldPassword = credential.oldPassword
+            storeCurrentCredential()
         }
     }
 }
 
+//MARK: - Store / Restore / Update of data for the UI
+
+private extension UpdateCredentialSheet {
+    private func storeCurrentCredential() {
+        currentName = credential.name
+        currentOldName = credential.oldName
+        currentUsername = credential.username
+        currentOldUsername = credential.oldUsername
+        currentPassword = credential.password
+        currentOldPassword = credential.oldPassword
+    }
+
+    private func restoreOldValues() {
+        credential.name = currentName
+        credential.username = currentUsername
+        credential.password = currentPassword
+    }
+
+    private func updateOldCredentialsInfo() {
+        if credential.oldName != currentName && credential.name != currentName {
+            credential.oldName = currentName
+            credential.lastChanged = credential.lastChanged.getCurrentDate()
+        }
+
+        if credential.oldUsername != currentUsername && credential.username != currentUsername {
+            credential.oldUsername = currentUsername
+            credential.lastChanged = credential.lastChanged.getCurrentDate()
+        }
+
+        if credential.oldPassword != currentPassword && credential.password != currentPassword {
+            credential.oldPassword = currentPassword
+            credential.lastChanged = credential.lastChanged.getCurrentDate()
+        }
+    }
+}
+
+//MARK: - UI
 
 private extension UpdateCredentialSheet {
     var credentialFields: some View {
@@ -69,8 +106,14 @@ private extension UpdateCredentialSheet {
         .headerProminence(.increased)
     }
 
-    var oldPassword: some View {
+    var oldCredential: some View {
         Section {
+            Text(credential.oldName)
+                .disabled(true)
+                .colorMultiply(.gray)
+            Text(credential.oldUsername)
+                .disabled(true)
+                .colorMultiply(.gray)
             Text(credential.oldPassword)
                 .disabled(true)
                 .colorMultiply(.gray)

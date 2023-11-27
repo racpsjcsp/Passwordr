@@ -40,7 +40,9 @@ struct AddCredentialSheet: View {
                     Button(K.Strings.saveButton) {
                         /// add string validations later...
                         let credential = Credential(name: viewModel.name.capitalized,
+                                                    oldName: viewModel.oldName,
                                                     username: viewModel.username,
+                                                    oldUsername: viewModel.oldUsername,
                                                     password: viewModel.password,
                                                     oldPassword: viewModel.oldPassword,
                                                     creationDate: viewModel.creationDate,

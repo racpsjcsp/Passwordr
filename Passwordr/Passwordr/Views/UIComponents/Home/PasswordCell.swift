@@ -68,5 +68,5 @@ struct PasswordCell: View {
 
 
 #Preview {
-    PasswordCell(credential: Credential(name: "name", username: "username", password: "password", oldPassword: "old password (optional)", creationDate: "10/10/1985", lastChanged: "10/10/2023"), password: .constant("password"))
+    PasswordCell(credential: Credential(name: "name", oldName: "oldName", username: "username", oldUsername: "oldUsername", password: "password", oldPassword: "old password (optional)", creationDate: "10/10/1985", lastChanged: "10/10/2023"), password: .constant("password"))
 }

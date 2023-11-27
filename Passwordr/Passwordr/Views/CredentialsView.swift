@@ -24,7 +24,9 @@ struct CredentialsView: View {
                                 .onEditTap(action: {
                                     credentialToEdit = credential
                                 }, credential: Credential(name: credential.name,
+                                                          oldName: credential.oldName,
                                                           username: credential.username,
+                                                          oldUsername: credential.oldUsername,
                                                           password: credential.password,
                                                           oldPassword: credential.oldPassword,
                                                           creationDate: credential.creationDate,
