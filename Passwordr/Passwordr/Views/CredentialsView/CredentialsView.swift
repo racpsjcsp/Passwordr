@@ -79,3 +79,16 @@ struct CredentialsView: View {
         }
     }
 }
+
+#Preview("Credential Screen Empty") {
+    let preview = PreviewContainer([Credential.self])
+    return CredentialsView().modelContainer(preview.container)
+}
+
+#Preview ("Credential Screen"){
+    let preview = PreviewContainer([Credential.self])
+    if let credentials = DefaultsJSON.decode(from: "credential", type: [Credential].self) {
+        preview.add(items: credentials)
+    }
+    return CredentialsView().modelContainer(preview.container)
+}
