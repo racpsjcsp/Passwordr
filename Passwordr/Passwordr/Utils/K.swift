@@ -44,6 +44,10 @@ struct K {
         static let lastChanged = ""
         static let clipboardMessage = "Copied to clipboard!"
 
+        // Tabs
+        static let passwordGenerator = "Password Generator"
+        static let tipMe = "Tip Me"
+
         // Colors
         static let myGreen = "myGreen"
 
@@ -57,6 +61,8 @@ struct K {
         static let docOndoc = "doc.on.doc"
         static let eye = "eye"
         static let eyeSlash = "eye.slash"
+        static let wandAndStars = "wand.and.stars"
+        static let dollarsignCircle = "dollarsign.circle"
 
     }
 }

@@ -10,10 +10,11 @@ import SwiftData
 
 struct HomeView: View {
     @StateObject private var viewModel = HomeViewViewModel()
+    @State private var selection : AppScreen? = .credentials
 
     var body: some View {
         if viewModel.isAuthenticated {
-            CredentialsView()
+            AppTabView(selection: $selection)
         } else {
             VStack(spacing: 40) {
                 FaceIDTitle()
