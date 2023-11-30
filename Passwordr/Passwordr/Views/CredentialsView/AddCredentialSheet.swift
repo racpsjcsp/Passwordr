@@ -15,7 +15,7 @@ struct AddCredentialSheet: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField(K.Strings.name, text: $viewModel.name)
+                TextField(K.Strings.title, text: $viewModel.title)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                 TextField(K.Strings.username, text: $viewModel.username)
@@ -39,8 +39,8 @@ struct AddCredentialSheet: View {
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     Button(K.Strings.saveButton) {
                         /// add string validations later...
-                        let credential = Credential(name: viewModel.name.capitalized,
-                                                    oldName: viewModel.oldName,
+                        let credential = Credential(title: viewModel.title.capitalized,
+                                                    oldTitle: viewModel.oldTitle,
                                                     username: viewModel.username,
                                                     oldUsername: viewModel.oldUsername,
                                                     password: viewModel.password,

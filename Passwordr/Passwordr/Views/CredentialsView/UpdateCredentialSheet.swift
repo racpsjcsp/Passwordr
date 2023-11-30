@@ -10,8 +10,8 @@ import SwiftUI
 struct UpdateCredentialSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Bindable var credential: Credential
-    @State private var currentName = ""
-    @State private var currentOldName = ""
+    @State private var currentTitle = ""
+    @State private var currentOldTitle = ""
     @State private var currentUsername = ""
     @State private var currentOldUsername = ""
     @State private var currentPassword = ""
@@ -52,8 +52,8 @@ struct UpdateCredentialSheet: View {
 
 private extension UpdateCredentialSheet {
     private func storeCurrentCredential() {
-        currentName = credential.name
-        currentOldName = credential.oldName
+        currentTitle = credential.title
+        currentOldTitle = credential.oldTitle
         currentUsername = credential.username
         currentOldUsername = credential.oldUsername
         currentPassword = credential.password
@@ -61,14 +61,14 @@ private extension UpdateCredentialSheet {
     }
 
     private func restoreOldValues() {
-        credential.name = currentName
+        credential.title = currentTitle
         credential.username = currentUsername
         credential.password = currentPassword
     }
 
     private func updateOldCredentialsInfo() {
-        if credential.oldName != currentName && credential.name != currentName {
-            credential.oldName = currentName
+        if credential.oldTitle != currentTitle && credential.title != currentTitle {
+            credential.oldTitle = currentTitle
             credential.lastChanged = credential.lastChanged.getCurrentDate()
         }
 
@@ -89,7 +89,7 @@ private extension UpdateCredentialSheet {
 private extension UpdateCredentialSheet {
     var credentialFields: some View {
         Section {
-            TextField(K.Strings.name, text: $credential.name)
+            TextField(K.Strings.title, text: $credential.title)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
             TextField(K.Strings.username, text: $credential.username)
@@ -108,7 +108,7 @@ private extension UpdateCredentialSheet {
 
     var oldCredential: some View {
         Section {
-            Text(credential.oldName)
+            Text(credential.oldTitle)
                 .disabled(true)
                 .colorMultiply(.gray)
             Text(credential.oldUsername)

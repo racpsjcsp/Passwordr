@@ -11,7 +11,7 @@ import SwiftData
 struct CredentialsView: View {
     @Environment(\.modelContext) var context
     @State private var isShowingCredentialSheet = false
-    @Query(sort: \Credential.name) private var credentials: [Credential]
+    @Query(sort: \Credential.title) private var credentials: [Credential]
     @State private var credentialToEdit: Credential?
 
     var body: some View {
@@ -23,8 +23,8 @@ struct CredentialsView: View {
                             UsernameCell(credential: credential, username: .constant(credential.username))
                                 .onEditTap(action: {
                                     credentialToEdit = credential
-                                }, credential: Credential(name: credential.name,
-                                                          oldName: credential.oldName,
+                                }, credential: Credential(title: credential.title,
+                                                          oldTitle: credential.oldTitle,
                                                           username: credential.username,
                                                           oldUsername: credential.oldUsername,
                                                           password: credential.password,
@@ -35,7 +35,7 @@ struct CredentialsView: View {
                             PasswordCell(credential: credential, password: .constant(credential.password))
                         } label: {
                             HStack {
-                                Text(credential.name)
+                                Text(credential.title)
                                 Spacer()
                             }
                         }
@@ -80,12 +80,12 @@ struct CredentialsView: View {
     }
 }
 
-#Preview("Credential Screen Empty") {
+#Preview(K.Strings.credentialScreenEmpty) {
     let preview = PreviewContainer([Credential.self])
     return CredentialsView().modelContainer(preview.container)
 }
 
-#Preview ("Credential Screen"){
+#Preview(K.Strings.credentialScreen){
     let preview = PreviewContainer([Credential.self])
     if let credentials = DefaultsJSON.decode(from: "credential", type: [Credential].self) {
         preview.add(items: credentials)

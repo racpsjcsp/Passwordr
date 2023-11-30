@@ -47,7 +47,9 @@ struct PasswordCell: View {
                 .overlay(alignment: .leading) {
                     Image(systemName: K.Strings.docOndoc)
                         .onTapGesture {
-                            pasteboard.string = credential.password
+                            let expireDate = Date().addingTimeInterval(TimeInterval(60))
+                            UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: credential.password]],
+                                                          options: [UIPasteboard.OptionsKey.expirationDate: expireDate])
                             
                             withAnimation {
                                 copied = true
@@ -58,15 +60,10 @@ struct PasswordCell: View {
                 }
                 
                 if copied {
-                    ToastView(copied: copied)
+                    ToastView(toastMessage: K.Strings.clipboardPasswordMessage, copied: copied)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
-}
-
-
-#Preview {
-    PasswordCell(credential: Credential(name: "name", oldName: "oldName", username: "username", oldUsername: "oldUsername", password: "password", oldPassword: "old password (optional)", creationDate: "10/10/1985", lastChanged: "10/10/2023"), password: .constant("password"))
 }

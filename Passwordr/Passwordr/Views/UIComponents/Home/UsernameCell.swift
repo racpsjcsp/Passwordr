@@ -55,7 +55,7 @@ struct UsernameCell: View {
                 }
                 
                 if copied {
-                    ToastView(copied: copied)
+                    ToastView(toastMessage: K.Strings.clipboardMessage, copied: copied)
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -65,6 +65,6 @@ struct UsernameCell: View {
 
 extension UsernameCell {
     func onEditTap(action: @escaping (() -> Void), credential: Credential) -> UsernameCell {
-        UsernameCell(credential: Credential(name: "name", oldName: "oldName", username: "username", oldUsername: "oldUsername", password: "password", oldPassword: "old password (optional)", creationDate: "10/10/1985", lastChanged: "10/10/2023"), onEditTap: action, username: .constant(username))
+        UsernameCell(credential: Credential(title: "name", oldTitle: "oldName", username: "username", oldUsername: "oldUsername", password: "password", oldPassword: "old password (optional)", creationDate: "10/10/1985", lastChanged: "10/10/2023"), onEditTap: action, username: .constant(username))
     }
 }

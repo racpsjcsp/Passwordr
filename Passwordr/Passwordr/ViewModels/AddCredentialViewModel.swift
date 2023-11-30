@@ -9,8 +9,8 @@ import Foundation
 import SwiftData
 
 class AddCredentialViewModel: ObservableObject {
-    @Published var name: String = ""
-    @Published var oldName: String = ""
+    @Published var title: String = ""
+    @Published var oldTitle: String = ""
     @Published var username: String = ""
     @Published var oldUsername: String = ""
     @Published var password: String = ""

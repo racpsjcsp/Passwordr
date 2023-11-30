@@ -36,13 +36,15 @@ struct K {
         // General
         static let cancelButton = "Cancel"
         static let saveButton = "Save"
-        static let name = "Name"
+        static let title = "Title"
+        static let oldTitle = "Old Title"
         static let username = "Login/Username"
         static let password = "Password"
         static let oldPassword = "Old Password (Optional)"
         static let creationDate = ""
         static let lastChanged = ""
         static let clipboardMessage = "Copied to clipboard!"
+        static let clipboardPasswordMessage = "Copied to clipboard (60s)"
 
         // Tabs
         static let passwordGenerator = "Password Generator"
@@ -64,5 +66,8 @@ struct K {
         static let wandAndStars = "wand.and.stars"
         static let dollarsignCircle = "dollarsign.circle"
 
+        // Previews
+        static let credentialScreenEmpty = "Credential Screen Empty"
+        static let credentialScreen = "Credential Screen"
     }
 }
