@@ -33,6 +33,15 @@ struct K {
         static let updateCredentialInfoUpdated = "Updated:"
         static let updateCredentialInfoHeader = "Information"
 
+        // PasswordGeneneratorView
+        static let passwordGeneratorNavTitle = "Password Generator"
+        static let passwordHowManyCharacters = "How many characters?"
+        static let passwordIncludeSymbol = "Include Symbol"
+        static let passwordIncludeNumber = "Include Number"
+        static let passwordIncludeEmptySpace = "Include Space"
+        static let passwordIncludeUpperCase = "Include Upper Case"
+        static let generatePassword = "Generate Password"
+
         // General
         static let cancelButton = "Cancel"
         static let saveButton = "Save"

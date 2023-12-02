@@ -33,13 +33,16 @@ extension AppScreen {
 
     @ViewBuilder
     var destination: some View {
-        switch self {
-        case .credentials:
-            CredentialsView()
-        case .passwordGenerator:
-            Text("Password Generator under construction!")
-        case .tipMe:
-            Text("Tip Me under construction!")
+        VStack {
+            switch self {
+            case .credentials:
+                CredentialsView()
+            case .passwordGenerator:
+                PasswordGeneratorView()
+            case .tipMe:
+                Text("Tip Me under construction!")
+            }
         }
+
     }
 }
