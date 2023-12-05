@@ -18,14 +18,12 @@ struct PasswordGeneratorView: View {
 
     var body: some View {
         NavigationStack {
-            VStack {
+            ScrollView {
                 Text(K.Strings.passwordHowManyCharacters)
                     .foregroundStyle(.purple)
                     .font(.title2)
 
                 Slider(value: $charCount, in: 1...20, step: 1) {
-                    Text("Quantity")
-
                 } minimumValueLabel: {
                     Text("1")
                         .font(.title2)
@@ -35,10 +33,10 @@ struct PasswordGeneratorView: View {
                 } onEditingChanged: { editing in
                     isEditing = editing
                 }
-                .padding([.leading, .trailing], 20)
+                .padding()
 
                 Text("\(Int(charCount))")
-                    .foregroundColor(isEditing ? .red : Color(K.Strings.myGreen))
+                    .foregroundColor(isEditing ? Color(K.Strings.myGreen) : .purple)
                     .font(.title2)
 
                 VStack {
@@ -72,7 +70,7 @@ struct PasswordGeneratorView: View {
                 .padding()
 
                 Button {
-                    print("tapped")
+                    print("tapped generate password")
                 } label: {
                     Image(systemName: K.Strings.wandAndStars)
                         .imageScale(.large)
@@ -80,10 +78,26 @@ struct PasswordGeneratorView: View {
                         .font(.title3)
                 }
                 .buttonStyle(.bordered).controlSize(.large)
-                .padding(.top, 60)
+                .padding()
+
+                Text("Generated Password goes here")
+                    .font(.title3)
+                    .padding()
+
+                Button {
+                    print("tapped copy")
+                } label: {
+                    Image(systemName: K.Strings.docOndoc)
+                        .imageScale(.large)
+                    Text("Copy")
+                        .font(.title3)
+                }
+                .buttonStyle(.borderless).controlSize(.small)
+                .padding()
             }
             .navigationTitle(K.Strings.passwordGeneratorNavTitle)
             .navigationBarTitleDisplayMode(.inline)
+            .padding()
         }
     }
 }
