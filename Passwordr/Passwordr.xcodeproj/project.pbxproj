@@ -15,6 +15,7 @@
 		46329E7E2B17D893003A7EE8 /* AppScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46329E7D2B17D893003A7EE8 /* AppScreen.swift */; };
 		4640B0462B0A311B00ED2705 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4640B0452B0A311B00ED2705 /* ToastView.swift */; };
 		4640B0482B0C0CFF00ED2705 /* PasswordrSplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4640B0472B0C0CFF00ED2705 /* PasswordrSplashView.swift */; };
+		465436632B1F70DC00477D72 /* PasswordGeneratorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465436622B1F70DC00477D72 /* PasswordGeneratorViewModel.swift */; };
 		468CDF6E2B1625DE0030613C /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CDF6D2B1625DE0030613C /* PreviewContainer.swift */; };
 		468CDF732B162F420030613C /* CredentialsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CDF722B162F420030613C /* CredentialsContainer.swift */; };
 		468CDF752B16323A0030613C /* DefaultsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CDF742B16323A0030613C /* DefaultsJSON.swift */; };
@@ -44,6 +45,7 @@
 		46329E7D2B17D893003A7EE8 /* AppScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppScreen.swift; sourceTree = "<group>"; };
 		4640B0452B0A311B00ED2705 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
 		4640B0472B0C0CFF00ED2705 /* PasswordrSplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordrSplashView.swift; sourceTree = "<group>"; };
+		465436622B1F70DC00477D72 /* PasswordGeneratorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorViewModel.swift; sourceTree = "<group>"; };
 		468CDF6D2B1625DE0030613C /* PreviewContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewContainer.swift; sourceTree = "<group>"; };
 		468CDF722B162F420030613C /* CredentialsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsContainer.swift; sourceTree = "<group>"; };
 		468CDF742B16323A0030613C /* DefaultsJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsJSON.swift; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				46BA23892B04ED82001FA81E /* HomeViewViewModel.swift */,
 				46B725C12B12A2BA00A9CBEF /* AddCredentialViewModel.swift */,
 				46B725C82B12AC4B00A9CBEF /* UpdateCredentialViewModel.swift */,
+				465436622B1F70DC00477D72 /* PasswordGeneratorViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				46B725C92B12AC4B00A9CBEF /* UpdateCredentialViewModel.swift in Sources */,
 				46B725C22B12A2BA00A9CBEF /* AddCredentialViewModel.swift in Sources */,
 				46EAB8C72B1158BC001357EA /* K.swift in Sources */,
+				465436632B1F70DC00477D72 /* PasswordGeneratorViewModel.swift in Sources */,
 				46B3C1B92B097AFD00CB98DC /* UsernameCell.swift in Sources */,
 				468CDF752B16323A0030613C /* DefaultsJSON.swift in Sources */,
 				4623F4AD2B1B8B320080D147 /* PasswordGeneratorView.swift in Sources */,

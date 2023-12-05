@@ -54,13 +54,23 @@ struct K {
         static let lastChanged = ""
         static let clipboardMessage = "Copied to clipboard!"
         static let clipboardPasswordMessage = "Copied to clipboard (60s)"
+        static let copy = "Copy"
 
         // Tabs
         static let passwordGenerator = "Password Generator"
         static let tipMe = "Tip Me"
 
-        // Colors
+        // Color Assets
         static let myGreen = "myGreen"
+        static let myBlack = "myBlack"
+        static let myBlue = "myBlue"
+        static let myYellow = "myYellow"
+        static let myRed = "myRed"
+        static let myPurple = "myPurple"
+        static let myWhite = "myWhite"
+        static let myTeal = "myTeal"
+        static let myOrange = "myOrange"
+        static let myGray = "myGray"
 
         // Images
         static let passwordrLogo = "passwordrLogo"
