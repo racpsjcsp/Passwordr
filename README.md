@@ -1,7 +1,5 @@
 # Passwordr
-Password Manager App
-Store your credentials with ease
-Generate customizable passwords with ease
+Password Manager App. STORE your credentials with ease and GENERATE customizable passwords with ease
 
 ## Frameworks used:
 - SwiftUI
