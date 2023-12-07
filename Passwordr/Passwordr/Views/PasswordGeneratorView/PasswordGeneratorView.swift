@@ -79,7 +79,7 @@ struct PasswordGeneratorView: View {
                             } else {
                                 ForEach(characters, id: \.self) { character in
                                     Text(character)
-                                        .foregroundColor(viewModel.specialCharactersArray.contains(character) ? Color(K.Strings.myBlue) : viewModel.numbersArray.contains(character) ? Color(K.Strings.myOrange) : viewModel.alphabet.contains(character) ? Color(K.Strings.myWhite) : Color(K.Strings.myRed))
+                                        .foregroundColor(viewModel.specialCharactersArray.contains(character) ? Color(K.Strings.myBlue) : viewModel.numbersArray.contains(character) ? Color(K.Strings.myOrange) : viewModel.alphabet.contains(character) ? Color(K.Strings.myGray) : Color(K.Strings.myRed))
                                 }
                             }
 
