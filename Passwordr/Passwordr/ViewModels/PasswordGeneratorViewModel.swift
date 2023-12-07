@@ -13,11 +13,11 @@ class PasswordGeneratorViewModel: ObservableObject {
     let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     let specialCharactersArray: [String] = ["(",")","{","}","[","]","/","\\","-","_","+","*","$",">",".","|","^","?","&","%","#","@","!","?","˜"]
     let numbersArray: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
-    let emptySpace = " "
 
     func generatePassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
         //The order of the conditions must be respected. Descending order (all (four), three, two, one)
-        ///All parameters
+
+        ///All parameters (four)
         if uppercase && specialCharacters && numbers && emptySpace {
             return fourParameterPassword(lenght: lenght)
         }
@@ -42,6 +42,109 @@ class PasswordGeneratorViewModel: ObservableObject {
         }
     }
 
+    private func oneParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
+        var password: [String] = [""]
+        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
+        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 2)
+        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 2)
+        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 2)
+        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 2)
+
+        if specialCharacters {
+            password = [assembledLowercasePassword, assembledSpecialCharacters].flatMap({ $0 })
+        }
+
+        if uppercase {
+            password = [assembledLowercasePassword, assembledUppercaseCharacters].flatMap({ $0 })
+        }
+
+        if numbers {
+            password = [assembledLowercasePassword, assembledNumberCharacters].flatMap({ $0 })
+        }
+
+        if emptySpace {
+            password = [assembledLowercasePassword, assembledEmptySpaces].flatMap({ $0 })
+        }
+
+        return finalPassword(password: password, lenght: lenght)
+    }
+
+    private func twoParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
+        var password: [String] = [""]
+        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
+        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 3)
+        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 3)
+        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 3)
+        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 3)
+
+        if uppercase && specialCharacters {
+            password = [assembledLowercasePassword, assembledUppercaseCharacters, assembledSpecialCharacters].flatMap({ $0 })
+        }
+
+        if uppercase && numbers {
+            password = [assembledLowercasePassword, assembledUppercaseCharacters, assembledNumberCharacters].flatMap({ $0 })
+        }
+
+        if numbers && specialCharacters {
+            password = [assembledLowercasePassword, assembledNumberCharacters, assembledSpecialCharacters].flatMap({ $0 })
+        }
+
+        if numbers && emptySpace {
+            password = [assembledLowercasePassword, assembledNumberCharacters, assembledEmptySpaces].flatMap({ $0 })
+        }
+
+        if specialCharacters && emptySpace {
+            password = [assembledLowercasePassword, assembledSpecialCharacters, assembledEmptySpaces].flatMap({ $0 })
+        }
+
+        if uppercase && emptySpace {
+            password = [assembledLowercasePassword, assembledUppercaseCharacters, assembledEmptySpaces].flatMap({ $0 })
+        }
+
+        return finalPassword(password: password, lenght: lenght)
+    }
+
+    private func threeParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
+        var password: [String] = [""]
+        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
+        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 3+1)
+        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 3+1)
+        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 3+1)
+        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 3+1)
+
+        if specialCharacters && uppercase && numbers {
+            password = [assembledLowercasePassword, assembledSpecialCharacters, assembledUppercaseCharacters, assembledNumberCharacters].flatMap({ $0 })
+        }
+
+        if specialCharacters && uppercase && emptySpace {
+            password = [assembledLowercasePassword, assembledSpecialCharacters, assembledUppercaseCharacters, assembledEmptySpaces].flatMap({ $0 })
+        }
+
+        if numbers && uppercase && emptySpace {
+            password = [assembledLowercasePassword, assembledNumberCharacters, assembledUppercaseCharacters, assembledEmptySpaces].flatMap({ $0 })
+        }
+
+        if numbers && specialCharacters && emptySpace {
+            password = [assembledLowercasePassword, assembledNumberCharacters, assembledSpecialCharacters, assembledEmptySpaces].flatMap({ $0 })
+        }
+        
+        return finalPassword(password: password, lenght: lenght)
+    }
+
+    private func fourParameterPassword(lenght: Int) -> [String] {
+        var password: [String] = [""]
+        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
+        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 3+1)
+        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 3+1)
+        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 3+1)
+        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 3+1)
+
+        password = [assembledLowercasePassword, assembledSpecialCharacters, assembledNumberCharacters,
+                    assembledEmptySpaces, assembledUppercaseCharacters].flatMap({ $0})
+
+        return finalPassword(password: password, lenght: lenght)
+    }
+
     private func lowercasePassword(lenght: Int) -> [String] {
         var password: [String] = [""]
 
@@ -49,328 +152,60 @@ class PasswordGeneratorViewModel: ObservableObject {
             password.append(alphabet.randomElement()!)
         }
 
-        if password.joined().count != lenght {
-            while password.joined().count > lenght {
-                password.remove(at: 0)
-            }
-        }
-        return password
+        return finalPassword(password: password, lenght: lenght)
     }
 
-    private func oneParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
-        var password: [String] = [""]
-        var uppercasedAlphabet: [String] = []
+    private func getSpecialCharacters(password: [String], lenght: Int, parameterCount: Int) -> [String] {
+        var pass = password
 
-        for character in alphabet {
-            uppercasedAlphabet.append(character.uppercased())
+        for _ in 0...lenght/parameterCount {
+            pass.append(specialCharactersArray.randomElement()!)
         }
 
-        if specialCharacters {
-            for _ in 0...lenght / 2 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            for _ in 0...lenght / 2 {
-                password.append(specialCharactersArray.randomElement()!)
-            }
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-
-            return password
-        }
-
-        if uppercase {
-            for _ in 0...lenght / 2 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            for _ in 0...lenght / 2 {
-                password.append(uppercasedAlphabet.randomElement()!)
-            }
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        if numbers {
-            for _ in 0...lenght / 2 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            for _ in 0...lenght / 2 {
-                password.append(numbersArray.randomElement()!)
-            }
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        if emptySpace {
-            for _ in 0...lenght / 2 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            for _ in 0...lenght / 2 {
-                password.append(self.emptySpace)
-            }
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        return password
+        return pass
     }
 
-    private func twoParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
-        var password: [String] = [""]
-        var uppercasedAlphabet: [String] = []
+    private func getNumberCharacters(password: [String], lenght: Int, parameterCount: Int) -> [String] {
+        var pass = password
 
-        for character in alphabet {
-            uppercasedAlphabet.append(character.uppercased())
+        for _ in 0...lenght/parameterCount {
+            pass.append(numbersArray.randomElement()!)
         }
 
-        if uppercase && specialCharacters {
-
-            for _ in 0...lenght / 3 {
-                password.append(uppercasedAlphabet.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(specialCharactersArray.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        if uppercase && numbers {
-
-            for _ in 0...lenght / 3 {
-                password.append(uppercasedAlphabet.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(numbersArray.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        if numbers && specialCharacters {
-
-            for _ in 0...lenght / 3 {
-                password.append(numbersArray.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(specialCharactersArray.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        if numbers && emptySpace {
-
-            for _ in 0...lenght / 3 {
-                password.append(numbersArray.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(self.emptySpace)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        if specialCharacters && emptySpace {
-
-            for _ in 0...lenght / 3 {
-                password.append(specialCharactersArray.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(self.emptySpace)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-
-        if uppercase && emptySpace {
-
-            for _ in 0...lenght / 3 {
-                password.append(uppercasedAlphabet.randomElement()!)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(self.emptySpace)
-            }
-
-            for _ in 0...lenght / 3 {
-                password.append(alphabet.randomElement()!)
-            }
-
-            password.shuffle()
-
-            if password.joined().count != lenght {
-                while password.joined().count > lenght {
-                    password.remove(at: 0)
-                }
-            }
-            return password
-        }
-        
-        return password
+        return pass
     }
 
-    private func threeParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
-        var password: [String] = [""]
-        var uppercasedAlphabet: [String] = []
+    private func getUppercaseCharacters(password: [String], lenght: Int, parameterCount: Int) -> [String] {
+        var pass = password
 
-        for character in alphabet {
-            uppercasedAlphabet.append(character.uppercased())
+        for _ in 0...lenght/parameterCount {
+            pass.append(alphabet.randomElement()!.uppercased())
         }
 
-        for _ in 0...lenght / 4 {
-            password.append(uppercasedAlphabet.randomElement()!)
-        }
-
-        for _ in 0...lenght / 4 {
-            password.append(specialCharactersArray.randomElement()!)
-        }
-
-        for _ in 0...lenght / 4 {
-            password.append(alphabet.randomElement()!)
-        }
-
-        for _ in 0...lenght / 4 {
-            password.append(numbersArray.randomElement()!)
-        }
-
-        for _ in 0...lenght / 4 {
-            password.append(self.emptySpace)
-        }
-
-        password.shuffle()
-
-        if password.joined().count != lenght {
-            while password.joined().count > lenght {
-                password.remove(at: 0)
-            }
-        }
-
-        return password
+        return pass
     }
 
-    private func fourParameterPassword(lenght: Int) -> [String] {
-        var password: [String] = [""]
-        var uppercasedAlphabet: [String] = []
+    private func getEmptySpaces(password: [String], lenght: Int, parameterCount: Int) -> [String] {
+        var pass = password
+        let emptySpace = " "
 
-        for character in alphabet {
-            uppercasedAlphabet.append(character.uppercased())
+        for _ in 0...lenght/parameterCount {
+            pass.append(emptySpace)
         }
 
-        for _ in 0...lenght / 5 {
-            password.append(uppercasedAlphabet.randomElement()!)
-        }
+        return pass
+    }
 
-        for _ in 0...lenght / 5 {
-            password.append(specialCharactersArray.randomElement()!)
-        }
+    private func finalPassword(password: [String], lenght: Int) -> [String] {
+        var pass = password
+        pass.shuffle()
 
-        for _ in 0...lenght / 5 {
-            password.append(alphabet.randomElement()!)
-        }
-
-        for _ in 0...lenght / 5 {
-            password.append(numbersArray.randomElement()!)
-        }
-
-        for _ in 0...lenght / 5 {
-            password.append(self.emptySpace)
-        }
-
-        password.shuffle()
-
-        if password.joined().count != lenght {
-            while password.joined().count > lenght {
-                password.remove(at: 0)
+        if pass.joined().count != lenght {
+            while pass.joined().count > lenght {
+                pass.remove(at: 0)
             }
         }
 
-        return password
+        return pass
     }
 }
