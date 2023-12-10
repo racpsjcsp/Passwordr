@@ -38,17 +38,27 @@ class PasswordGeneratorViewModel: ObservableObject {
         }
 
         else {
-            return lowercasePassword(lenght: lenght)
+            return zeroParameterPassword(lenght: lenght)
         }
+    }
+
+    private func zeroParameterPassword(lenght: Int) -> [String] {
+        var password: [String] = [""]
+
+        for _ in 0...lenght {
+            password.append(alphabet.randomElement()!)
+        }
+
+        return assemblePassword(password: password, lenght: lenght, hasParameter: false, hasNumber: false, hasSymbol: false, hasEmpty: false, hasUpper: false)
     }
 
     private func oneParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
         var password: [String] = [""]
-        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
-        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 2)
-        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 2)
-        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 2)
-        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 2)
+        let assembledLowercasePassword = lowercaseCharacters(lenght: lenght, parameterCount: 1+1)
+        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 1+1)
+        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 1+1)
+        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 1+1)
+        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 1+1)
 
         if specialCharacters {
             password = [assembledLowercasePassword, assembledSpecialCharacters].flatMap({ $0 })
@@ -66,16 +76,16 @@ class PasswordGeneratorViewModel: ObservableObject {
             password = [assembledLowercasePassword, assembledEmptySpaces].flatMap({ $0 })
         }
 
-        return finalPassword(password: password, lenght: lenght)
+        return assemblePassword(password: password, lenght: lenght, hasParameter: true, hasNumber: numbers, hasSymbol: specialCharacters, hasEmpty: emptySpace, hasUpper: uppercase)
     }
 
     private func twoParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
         var password: [String] = [""]
-        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
-        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 3)
-        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 3)
-        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 3)
-        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 3)
+        let assembledLowercasePassword = lowercaseCharacters(lenght: lenght, parameterCount: 2+1)
+        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 2+1)
+        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 2+1)
+        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 2+1)
+        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 2+1)
 
         if uppercase && specialCharacters {
             password = [assembledLowercasePassword, assembledUppercaseCharacters, assembledSpecialCharacters].flatMap({ $0 })
@@ -101,12 +111,12 @@ class PasswordGeneratorViewModel: ObservableObject {
             password = [assembledLowercasePassword, assembledUppercaseCharacters, assembledEmptySpaces].flatMap({ $0 })
         }
 
-        return finalPassword(password: password, lenght: lenght)
+        return assemblePassword(password: password, lenght: lenght, hasParameter: true, hasNumber: numbers, hasSymbol: specialCharacters, hasEmpty: emptySpace, hasUpper: uppercase)
     }
 
     private func threeParameterPassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
         var password: [String] = [""]
-        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
+        let assembledLowercasePassword = lowercaseCharacters(lenght: lenght, parameterCount: 3+1)
         let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 3+1)
         let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 3+1)
         let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 3+1)
@@ -128,27 +138,27 @@ class PasswordGeneratorViewModel: ObservableObject {
             password = [assembledLowercasePassword, assembledNumberCharacters, assembledSpecialCharacters, assembledEmptySpaces].flatMap({ $0 })
         }
         
-        return finalPassword(password: password, lenght: lenght)
+        return assemblePassword(password: password, lenght: lenght, hasParameter: true, hasNumber: numbers, hasSymbol: specialCharacters, hasEmpty: emptySpace, hasUpper: uppercase)
     }
 
     private func fourParameterPassword(lenght: Int) -> [String] {
         var password: [String] = [""]
-        let assembledLowercasePassword = lowercasePassword(lenght: lenght)
-        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 3+1)
-        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 3+1)
-        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 3+1)
-        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 3+1)
+        let assembledLowercasePassword = lowercaseCharacters(lenght: lenght, parameterCount: 4+1)
+        let assembledSpecialCharacters = getSpecialCharacters(password: password, lenght: lenght, parameterCount: 4+1)
+        let assembledNumberCharacters = getNumberCharacters(password: password, lenght: lenght, parameterCount: 4+1)
+        let assembledEmptySpaces = getEmptySpaces(password: password, lenght: lenght, parameterCount: 4+1)
+        let assembledUppercaseCharacters = getUppercaseCharacters(password: password, lenght: lenght, parameterCount: 4+1)
 
         password = [assembledLowercasePassword, assembledSpecialCharacters, assembledNumberCharacters,
                     assembledEmptySpaces, assembledUppercaseCharacters].flatMap({ $0})
 
-        return finalPassword(password: password, lenght: lenght)
+        return assemblePassword(password: password, lenght: lenght, hasParameter: true, hasNumber: true, hasSymbol: true, hasEmpty: true, hasUpper: true)
     }
 
-    private func lowercasePassword(lenght: Int) -> [String] {
+    private func lowercaseCharacters(lenght: Int, parameterCount: Int) -> [String] {
         var password: [String] = [""]
 
-        for _ in 0...lenght {
+        for _ in 0...lenght/parameterCount {
             password.append(alphabet.randomElement()!)
         }
 
@@ -206,6 +216,38 @@ class PasswordGeneratorViewModel: ObservableObject {
             }
         }
 
+        return pass
+    }
+
+    private func assemblePassword(password: [String], lenght: Int, hasParameter: Bool, hasNumber: Bool, hasSymbol: Bool, hasEmpty: Bool, hasUpper: Bool) -> [String] {
+        var pass = password
+
+        if pass.joined().count != lenght {
+            while pass.joined().count > lenght {
+                pass.shuffle()
+                pass.remove(at: 0)
+            }
+        }
+        
+        if hasParameter {
+            for _ in password {
+                while password.joined().count < lenght {
+                    if hasNumber {
+                        pass.append(numbersArray.randomElement()!)
+                    } else if hasSymbol {
+                        pass.append(specialCharactersArray.randomElement()!)
+                    } else if hasUpper {
+                        pass.append(alphabet.randomElement()!.uppercased())
+                    } else if hasEmpty {
+                        pass.append(" ")
+                    } else {
+                        pass.append(alphabet.randomElement()!)
+                    }
+                }
+            }
+        }
+
+        pass.shuffle()
         return pass
     }
 }
