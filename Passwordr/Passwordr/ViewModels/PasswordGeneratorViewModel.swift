@@ -162,7 +162,7 @@ class PasswordGeneratorViewModel: ObservableObject {
             password.append(alphabet.randomElement()!)
         }
 
-        return finalPassword(password: password, lenght: lenght)
+        return lowercasePassword(password: password, lenght: lenght)
     }
 
     private func getSpecialCharacters(password: [String], lenght: Int, parameterCount: Int) -> [String] {
@@ -206,29 +206,9 @@ class PasswordGeneratorViewModel: ObservableObject {
         return pass
     }
 
-    private func finalPassword(password: [String], lenght: Int) -> [String] {
-        var pass = password
-        pass.shuffle()
-
-        if pass.joined().count != lenght {
-            while pass.joined().count > lenght {
-                pass.remove(at: 0)
-            }
-        }
-
-        return pass
-    }
-
     private func assemblePassword(password: [String], lenght: Int, hasParameter: Bool, hasNumber: Bool, hasSymbol: Bool, hasEmpty: Bool, hasUpper: Bool) -> [String] {
-        var pass = password
+        var pass = lowercasePassword(password: password, lenght: lenght)
 
-        if pass.joined().count != lenght {
-            while pass.joined().count > lenght {
-                pass.shuffle()
-                pass.remove(at: 0)
-            }
-        }
-        
         if hasParameter {
             for _ in password {
                 while password.joined().count < lenght {
@@ -248,6 +228,19 @@ class PasswordGeneratorViewModel: ObservableObject {
         }
 
         pass.shuffle()
+        return pass
+    }
+
+    private func lowercasePassword(password: [String], lenght: Int) -> [String] {
+        var pass = password
+
+        if pass.joined().count != lenght {
+            while pass.joined().count > lenght {
+                pass.shuffle()
+                pass.remove(at: 0)
+            }
+        }
+
         return pass
     }
 }

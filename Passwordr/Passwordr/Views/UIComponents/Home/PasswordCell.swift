@@ -37,15 +37,15 @@ struct PasswordCell: View {
                     }
                 }
                 .overlay(alignment: .trailing) {
-                    Image(systemName: isSecureField ? K.Strings.eye : K.Strings.eyeSlash)
+                    Image(systemName: isSecureField ? K.Image.eye : K.Image.eyeSlash)
                         .onTapGesture {
                             isSecureField.toggle()
                         }
                         .offset(x: 16, y: 0)
-                        .foregroundStyle(Color(K.Strings.myGreen))
+                        .foregroundStyle(Color(.myGreen))
                 }
                 .overlay(alignment: .leading) {
-                    Image(systemName: K.Strings.docOndoc)
+                    Image(systemName: K.Image.docOndoc)
                         .onTapGesture {
                             let expireDate = Date().addingTimeInterval(TimeInterval(60))
                             UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: credential.password]],
@@ -56,7 +56,7 @@ struct PasswordCell: View {
                             }
                         }
                         .offset(x: -36, y: 0)
-                        .foregroundStyle(Color(K.Strings.myGreen))
+                        .foregroundStyle(Color(.myGreen))
                 }
                 
                 if copied {

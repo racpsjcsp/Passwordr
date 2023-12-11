@@ -20,13 +20,13 @@ extension AppScreen {
     var label: some View {
         switch self {
         case .credentials:
-            Label(K.Strings.homeNavTitle, systemImage: K.Strings.newspaper)
+            Label(K.Strings.homeNavTitle, systemImage: K.Image.newspaper)
                 .foregroundStyle(.myGreen)
         case .passwordGenerator:
-            Label(K.Strings.passwordGenerator, systemImage: K.Strings.wandAndStars)
+            Label(K.Strings.passwordGenerator, systemImage: K.Image.wandAndStars)
                 .foregroundStyle(.myGreen)
         case .tipMe:
-            Label(K.Strings.tipMe, systemImage: K.Strings.dollarsignCircle)
+            Label(K.Strings.tipMe, systemImage: K.Image.dollarsignCircle)
                 .foregroundStyle(.myGreen)
         }
     }

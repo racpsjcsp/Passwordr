@@ -19,7 +19,7 @@ struct HomeView: View {
             VStack(spacing: 40) {
                 FaceIDTitle()
 
-                FaceIDButton(image: K.Strings.faceID, text: K.Strings.authScreenTitle)
+                FaceIDButton(image: K.Image.faceID, text: K.Strings.authScreenTitle)
                     .onTapGesture {
                         Task {
                             await viewModel.authenticateWithFaceID()

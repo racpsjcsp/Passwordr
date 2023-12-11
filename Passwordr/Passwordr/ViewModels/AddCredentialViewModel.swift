@@ -18,6 +18,13 @@ class AddCredentialViewModel: ObservableObject {
     @Published var creationDate: String = ""
     @Published var lastChanged: String = ""
 
+    var isFormComplete: Bool {
+        if title.isEmpty || username.isEmpty || password.isEmpty {
+            return false
+        }
+        return true
+    }
+
     func updateLabelIfNeeded() {
         if !oldPassword.isEmpty && oldPassword != password {
             lastChanged = lastChanged.getCurrentDate()

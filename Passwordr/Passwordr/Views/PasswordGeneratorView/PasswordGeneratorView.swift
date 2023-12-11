@@ -40,30 +40,30 @@ struct PasswordGeneratorView: View {
                     Section {
                         Toggle(isOn: $isSymbolsOn) {
                             Text(K.Strings.passwordIncludeSymbol)
-                                .foregroundStyle(Color(K.Strings.myBlue))
-                        }.toggleStyle(.switch).tint(Color(K.Strings.myBlue))
+                                .foregroundStyle(Color(.myBlue))
+                        }.toggleStyle(.switch).tint(Color(.myBlue))
 
                         Toggle(isOn: $isNumbersOn) {
                             Text(K.Strings.passwordIncludeNumber)
-                                .foregroundStyle(Color(K.Strings.myOrange))
-                        }.toggleStyle(.switch).tint(Color(K.Strings.myOrange))
+                                .foregroundStyle(Color(.myOrange))
+                        }.toggleStyle(.switch).tint(Color(.myOrange))
 
                         Toggle(isOn: $hasUpperCase) {
                             Text(K.Strings.passwordIncludeUpperCase)
-                                .foregroundStyle(Color(K.Strings.myRed))
-                        }.toggleStyle(.switch).tint(Color(K.Strings.myRed))
+                                .foregroundStyle(Color(.myRed))
+                        }.toggleStyle(.switch).tint(Color(.myRed))
 
                         Toggle(isOn: $isEmptySpaceOn) {
                             Text(K.Strings.passwordIncludeEmptySpace)
-                                .foregroundStyle(Color(K.Strings.myPurple))
-                        }.toggleStyle(.switch).tint(Color(K.Strings.myPurple))
+                                .foregroundStyle(Color(.myPurple))
+                        }.toggleStyle(.switch).tint(Color(.myPurple))
                     }
 
                     Button {
                         characters = viewModel.generatePassword(lenght: Int(charCount), specialCharacters: isSymbolsOn, uppercase: hasUpperCase, numbers: isNumbersOn, emptySpace: isEmptySpaceOn)
                         generatedPassword = characters.joined()
                     } label: {
-                            Image(systemName: K.Strings.wandAndStars)
+                            Image(systemName: K.Image.wandAndStars)
                                 .imageScale(.large)
                             Text(K.Strings.generatePassword)
                     }
@@ -75,11 +75,11 @@ struct PasswordGeneratorView: View {
                         HStack(spacing: 0.5) {
                             if generatedPassword.isEmpty {
                                 Text(K.Strings.password)
-                                    .foregroundStyle(Color(K.Strings.myGray))
+                                    .foregroundStyle(Color(.myGray))
                             } else {
                                 ForEach(characters, id: \.self) { character in
                                     Text(character)
-                                        .foregroundColor(viewModel.specialCharactersArray.contains(character) ? Color(K.Strings.myBlue) : viewModel.numbersArray.contains(character) ? Color(K.Strings.myOrange) : viewModel.alphabet.contains(character) ? Color(K.Strings.myGray) : Color(K.Strings.myRed))
+                                        .foregroundColor(viewModel.specialCharactersArray.contains(character) ? Color(.myBlue) : viewModel.numbersArray.contains(character) ? Color(.myOrange) : viewModel.alphabet.contains(character) ? Color(.myGray) : Color(.myRed))
                                 }
                             }
 
@@ -88,7 +88,7 @@ struct PasswordGeneratorView: View {
                             Button {
                                 print("tapped copy")
                             } label: {
-                                Image(systemName: K.Strings.docOndoc)
+                                Image(systemName: K.Image.docOndoc)
                                     .imageScale(.large)
                             }
                             .buttonStyle(.borderless).controlSize(.large)

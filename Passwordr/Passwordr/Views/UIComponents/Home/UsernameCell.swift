@@ -34,15 +34,15 @@ struct UsernameCell: View {
                     Spacer()
                 }
                 .overlay(alignment: .trailing) {
-                    Image(systemName: K.Strings.pencil)
+                    Image(systemName: K.Image.pencil)
                         .onTapGesture {
                             onEditTap?()
                         }
                         .offset(x: 16, y: 0)
-                        .foregroundStyle(Color(K.Strings.myGreen))
+                        .foregroundStyle(Color(.myGreen))
                 }
                 .overlay(alignment: .leading) {
-                    Image(systemName: K.Strings.docOndoc)
+                    Image(systemName: K.Image.docOndoc)
                         .onTapGesture {
                             pasteboard.string = credential.username
                             
@@ -51,7 +51,7 @@ struct UsernameCell: View {
                             }
                         }
                         .offset(x: -36, y: 0)
-                        .foregroundStyle(Color(K.Strings.myGreen))
+                        .foregroundStyle(Color(.myGreen))
                 }
                 
                 if copied {

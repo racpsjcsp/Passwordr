@@ -40,7 +40,7 @@ struct CredentialsView: View {
                             }
                         }
                     }
-                    .tint(Color(K.Strings.myGreen))
+                    .tint(Color(.myGreen))
                     .listSectionSpacing(.custom(4))
 
                 }
@@ -57,23 +57,23 @@ struct CredentialsView: View {
                 UpdateCredentialSheet(credential: credential)
             })
             .toolbar {
-                Button(K.Strings.homeAddCredentialTitle, systemImage: K.Strings.plus) {
+                Button(K.Strings.homeAddCredentialTitle, systemImage: K.Image.plus) {
                     isShowingCredentialSheet = true
                 }
             }
-            .tint(Color(K.Strings.myGreen))
+            .tint(Color(.myGreen))
         }
         .overlay {
             if credentials.isEmpty {
                 ContentUnavailableView(label: {
-                    Label(K.Strings.homeNoCredentialLabel, systemImage: K.Strings.newspaper)
+                    Label(K.Strings.homeNoCredentialLabel, systemImage: K.Image.newspaper)
                 }, description: {
                     Text(K.Strings.homeCredentialDescription)
                 }, actions: {
                     Button(K.Strings.homeAddCredentialTitle) {
                         isShowingCredentialSheet = true
                     }
-                    .tint(Color(K.Strings.myGreen))
+                    .tint(Color(.myGreen))
                 })
             }
         }

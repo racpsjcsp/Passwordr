@@ -44,7 +44,7 @@ struct K {
 
         // General
         static let cancelButton = "Cancel"
-        static let saveButton = "Save"
+        static let saveButton = "Save Credential"
         static let title = "Title"
         static let oldTitle = "Old Title"
         static let username = "Login/Username"
@@ -60,19 +60,12 @@ struct K {
         static let passwordGenerator = "Password Generator"
         static let tipMe = "Tip Me"
 
-        // Color Assets
-        static let myGreen = "myGreen"
-        static let myBlack = "myBlack"
-        static let myBlue = "myBlue"
-        static let myYellow = "myYellow"
-        static let myRed = "myRed"
-        static let myPurple = "myPurple"
-        static let myWhite = "myWhite"
-        static let myTeal = "myTeal"
-        static let myOrange = "myOrange"
-        static let myGray = "myGray"
+        // Previews
+        static let credentialScreenEmpty = "Credential Screen Empty"
+        static let credentialScreen = "Credential Screen"
+    }
 
-        // Images
+    struct Image {
         static let passwordrLogo = "passwordrLogo"
         static let faceID = "faceid"
         static let newspaper = "newspaper"
@@ -84,9 +77,5 @@ struct K {
         static let eyeSlash = "eye.slash"
         static let wandAndStars = "wand.and.stars"
         static let dollarsignCircle = "dollarsign.circle"
-
-        // Previews
-        static let credentialScreenEmpty = "Credential Screen Empty"
-        static let credentialScreen = "Credential Screen"
     }
 }
