@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		46212FA62B07A32900FC2600 /* AddCredentialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */; };
 		46212FA82B07B11100FC2600 /* UpdateCredentialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */; };
+		462146D12B28C877006BD985 /* PasswordStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462146D02B28C877006BD985 /* PasswordStrengthView.swift */; };
+		462146D32B28D86E006BD985 /* PasswordStrengthDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462146D22B28D86E006BD985 /* PasswordStrengthDescription.swift */; };
 		4623F4AD2B1B8B320080D147 /* PasswordGeneratorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4623F4AC2B1B8B320080D147 /* PasswordGeneratorView.swift */; };
 		4623F4AF2B1B96C50080D147 /* credential.json in Resources */ = {isa = PBXBuildFile; fileRef = 4623F4AE2B1B96C50080D147 /* credential.json */; };
 		46329E7B2B17D791003A7EE8 /* AppTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46329E7A2B17D791003A7EE8 /* AppTabView.swift */; };
@@ -39,6 +41,8 @@
 /* Begin PBXFileReference section */
 		46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCredentialSheet.swift; sourceTree = "<group>"; };
 		46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialSheet.swift; sourceTree = "<group>"; };
+		462146D02B28C877006BD985 /* PasswordStrengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthView.swift; sourceTree = "<group>"; };
+		462146D22B28D86E006BD985 /* PasswordStrengthDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthDescription.swift; sourceTree = "<group>"; };
 		4623F4AC2B1B8B320080D147 /* PasswordGeneratorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordGeneratorView.swift; sourceTree = "<group>"; };
 		4623F4AE2B1B96C50080D147 /* credential.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = credential.json; sourceTree = "<group>"; };
 		46329E7A2B17D791003A7EE8 /* AppTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabView.swift; sourceTree = "<group>"; };
@@ -114,6 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				4623F4AC2B1B8B320080D147 /* PasswordGeneratorView.swift */,
+				462146D02B28C877006BD985 /* PasswordStrengthView.swift */,
 			);
 			path = PasswordGeneratorView;
 			sourceTree = "<group>";
@@ -122,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				46329E7D2B17D893003A7EE8 /* AppScreen.swift */,
+				462146D22B28D86E006BD985 /* PasswordStrengthDescription.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -201,11 +207,11 @@
 		46BA23862B04EC5A001FA81E /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				4623F4AB2B1B8B1A0080D147 /* PasswordGeneratorView */,
 				46329E7A2B17D791003A7EE8 /* AppTabView.swift */,
 				46BA23872B04ECE4001FA81E /* HomeView.swift */,
 				468CDF6F2B1628810030613C /* CredentialsView */,
 				46BA23832B04EBCD001FA81E /* UIComponents */,
+				4623F4AB2B1B8B1A0080D147 /* PasswordGeneratorView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -295,6 +301,7 @@
 				46B725CB2B12B90900A9CBEF /* Credential.swift in Sources */,
 				46212FA62B07A32900FC2600 /* AddCredentialSheet.swift in Sources */,
 				46BA23882B04ECE4001FA81E /* HomeView.swift in Sources */,
+				462146D32B28D86E006BD985 /* PasswordStrengthDescription.swift in Sources */,
 				46BA23852B04EBF8001FA81E /* FaceIDButton.swift in Sources */,
 				46B725C92B12AC4B00A9CBEF /* UpdateCredentialViewModel.swift in Sources */,
 				46B725C22B12A2BA00A9CBEF /* AddCredentialViewModel.swift in Sources */,
@@ -308,6 +315,7 @@
 				46BA238A2B04ED82001FA81E /* HomeViewViewModel.swift in Sources */,
 				46329E7E2B17D893003A7EE8 /* AppScreen.swift in Sources */,
 				46B725C42B12A33700A9CBEF /* CredentialsView.swift in Sources */,
+				462146D12B28C877006BD985 /* PasswordStrengthView.swift in Sources */,
 				46BA238C2B04EE2A001FA81E /* FaceIDTitle.swift in Sources */,
 				46BA23762B03D6BC001FA81E /* PasswordrApp.swift in Sources */,
 				46329E7B2B17D791003A7EE8 /* AppTabView.swift in Sources */,

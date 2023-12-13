@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension String {
     public func getCurrentDate() -> String {
@@ -29,5 +30,12 @@ extension String {
 
         let currentDate = "\(day)/\(month)/\(year) at \(fullHour):\(fullMinute)"
         return currentDate
+    }
+
+    public func copyToClipboard(string: String) {
+        let expireDate = Date().addingTimeInterval(TimeInterval(60))
+        
+        UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: string]],
+                                      options: [UIPasteboard.OptionsKey.expirationDate: expireDate])
     }
 }

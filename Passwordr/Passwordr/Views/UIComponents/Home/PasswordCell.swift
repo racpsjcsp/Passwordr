@@ -47,10 +47,8 @@ struct PasswordCell: View {
                 .overlay(alignment: .leading) {
                     Image(systemName: K.Image.docOndoc)
                         .onTapGesture {
-                            let expireDate = Date().addingTimeInterval(TimeInterval(60))
-                            UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: credential.password]],
-                                                          options: [UIPasteboard.OptionsKey.expirationDate: expireDate])
-                            
+                            pasteboard.string?.copyToClipboard(string: credential.password)
+
                             withAnimation {
                                 copied = true
                             }

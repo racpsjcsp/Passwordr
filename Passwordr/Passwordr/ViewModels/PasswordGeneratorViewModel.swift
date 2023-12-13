@@ -9,10 +9,15 @@ import Foundation
 
 class PasswordGeneratorViewModel: ObservableObject {
     @Published var generatedPassword = [String]()
+    @Published var possibleCompbinations: Double
 
     let alphabet: [String] = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
     let specialCharactersArray: [String] = ["(",")","{","}","[","]","/","\\","-","_","+","*","$",">",".","|","^","?","&","%","#","@","!","?","˜"]
     let numbersArray: [String] = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+
+    init () {
+        self.possibleCompbinations = Double(truncating: NSDecimalNumber(decimal: pow(27, 9)))
+    }
 
     func generatePassword(lenght: Int, specialCharacters: Bool, uppercase: Bool, numbers: Bool, emptySpace: Bool) -> [String] {
         //The order of the conditions must be respected. Descending order (all (four), three, two, one)
@@ -242,5 +247,57 @@ class PasswordGeneratorViewModel: ObservableObject {
         }
 
         return pass
+    }
+
+    func passwordStrenghtCalculator(password: String) -> Double {
+        var pool = 0
+        let lenght = password.count
+        let lettersArray = Array(password)
+        var uppercasedAlphabet: [String] = []
+        let emptySpace = " "
+
+        for char in alphabet {
+            uppercasedAlphabet.append(char.uppercased())
+        }
+
+        for char in lettersArray {
+            if alphabet.contains(String(char)) {
+                pool += alphabet.count
+                break
+            }
+        }
+
+        for char in lettersArray {
+            if uppercasedAlphabet.contains(String(char)) {
+                pool += uppercasedAlphabet.count
+                break
+            }
+        }
+
+        for char in lettersArray {
+            if numbersArray.contains(String(char)) {
+                pool += numbersArray.count
+                break
+            }
+        }
+
+        for char in lettersArray {
+            if specialCharactersArray.contains(String(char)) {
+                pool += specialCharactersArray.count
+                break
+            }
+        }
+
+        if lettersArray.contains(emptySpace) {
+            pool += 1
+        }
+
+        let numberPower = pow(Decimal(pool), lenght)
+
+        let numberPowerToDouble = Double(truncating: NSDecimalNumber(decimal: numberPower))
+        possibleCompbinations = numberPowerToDouble
+        let entropy = log2(numberPowerToDouble)
+
+        return entropy
     }
 }

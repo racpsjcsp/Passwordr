@@ -44,7 +44,7 @@ struct K {
 
         // General
         static let cancelButton = "Cancel"
-        static let saveButton = "Save Credential"
+        static let saveButton = "Save"
         static let title = "Title"
         static let oldTitle = "Old Title"
         static let username = "Login/Username"
@@ -77,5 +77,6 @@ struct K {
         static let eyeSlash = "eye.slash"
         static let wandAndStars = "wand.and.stars"
         static let dollarsignCircle = "dollarsign.circle"
+        static let triangleFill = "triangle.fill"
     }
 }

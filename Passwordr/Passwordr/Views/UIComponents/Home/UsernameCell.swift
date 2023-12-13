@@ -44,8 +44,8 @@ struct UsernameCell: View {
                 .overlay(alignment: .leading) {
                     Image(systemName: K.Image.docOndoc)
                         .onTapGesture {
-                            pasteboard.string = credential.username
-                            
+                            pasteboard.string = $username.wrappedValue
+
                             withAnimation {
                                 copied = true
                             }
