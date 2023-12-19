@@ -30,15 +30,16 @@ struct UsernameCell: View {
             ZStack {
                 HStack {
                     TextField(credential.username, text: $username)
+                        .font(username.count > 25 ? .system(size: 15) : .body)
                         .disabled(true)
                     Spacer()
                 }
                 .overlay(alignment: .trailing) {
-                    Image(systemName: K.Image.pencil)
+                    Image(systemName: K.Image.sliderHorizontalMenu)
                         .onTapGesture {
                             onEditTap?()
                         }
-                        .offset(x: 16, y: 0)
+                        .offset(x: 4, y: 0)
                         .foregroundStyle(Color(.myGreen))
                 }
                 .overlay(alignment: .leading) {
@@ -50,7 +51,7 @@ struct UsernameCell: View {
                                 copied = true
                             }
                         }
-                        .offset(x: -36, y: 0)
+                        .offset(x: -30, y: 0)
                         .foregroundStyle(Color(.myGreen))
                 }
                 

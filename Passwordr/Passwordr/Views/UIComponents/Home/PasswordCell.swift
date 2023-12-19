@@ -30,9 +30,11 @@ struct PasswordCell: View {
                 HStack {
                     if isSecureField {
                         SecureField(K.Strings.password, text: $password)
+                            .font(credential.password.count > 25 ? .system(size: 15) : .body)
                             .disabled(true)
                     } else {
                         TextField(credential.password, text: $password)
+                            .font(credential.password.count > 25 ? .system(size: 15) : .body)
                             .disabled(true)
                     }
                 }
@@ -41,7 +43,7 @@ struct PasswordCell: View {
                         .onTapGesture {
                             isSecureField.toggle()
                         }
-                        .offset(x: 16, y: 0)
+                        .offset(x: 4, y: 0)
                         .foregroundStyle(Color(.myGreen))
                 }
                 .overlay(alignment: .leading) {
@@ -53,7 +55,7 @@ struct PasswordCell: View {
                                 copied = true
                             }
                         }
-                        .offset(x: -36, y: 0)
+                        .offset(x: -30, y: 0)
                         .foregroundStyle(Color(.myGreen))
                 }
                 

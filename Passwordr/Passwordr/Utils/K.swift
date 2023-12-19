@@ -78,5 +78,6 @@ struct K {
         static let wandAndStars = "wand.and.stars"
         static let dollarsignCircle = "dollarsign.circle"
         static let triangleFill = "triangle.fill"
+        static let sliderHorizontalMenu = "slider.horizontal.3"
     }
 }

@@ -19,7 +19,7 @@ struct PasswordGeneratorView: View {
     @State private var generatedPassword = ""
     @State private var generatedPasswordEntropy = 0.0
     @State private var strengthDescription = ""
-    var clipboardString: String = ""
+    private var clipboardString: String = ""
     @ObservedObject var viewModel = PasswordGeneratorViewModel()
     @State private var copied = false {
         didSet {
