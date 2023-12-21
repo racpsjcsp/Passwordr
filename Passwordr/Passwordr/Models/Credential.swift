@@ -7,17 +7,18 @@
 
 import Foundation
 import SwiftData
+import CloudKit
 
 @Model
 class Credential: Codable { /// Codable was added to make it work with JSON data for Previewing in Canvas, so required init and encoded were also needed
-    var title: String
-    var oldTitle: String
-    var username: String
-    var oldUsername: String
-    var password: String
-    var oldPassword: String
-    var creationDate: String
-    var lastChanged: String
+    var title: String = "Title"
+    var oldTitle: String = "Old Title"
+    var username: String = "Username"
+    var oldUsername: String = "Old Username"
+    var password: String = "Password"
+    var oldPassword: String = "Old Password"
+    var creationDate: String = "Creation Date"
+    var lastChanged: String = "Last Changed"
 
     enum CodingKeys: String, CodingKey {
         case title

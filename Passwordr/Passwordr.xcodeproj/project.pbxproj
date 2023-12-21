@@ -70,6 +70,7 @@
 		46BA23892B04ED82001FA81E /* HomeViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewViewModel.swift; sourceTree = "<group>"; };
 		46BA238B2B04EE2A001FA81E /* FaceIDTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDTitle.swift; sourceTree = "<group>"; };
 		46EAB8C62B1158BC001357EA /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		46FCB9412B330AC8005E9300 /* Passwordr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Passwordr.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +170,7 @@
 		46BA23742B03D6BC001FA81E /* Passwordr */ = {
 			isa = PBXGroup;
 			children = (
+				46FCB9412B330AC8005E9300 /* Passwordr.entitlements */,
 				46BA23752B03D6BC001FA81E /* PasswordrApp.swift */,
 				4640B0472B0C0CFF00ED2705 /* PasswordrSplashView.swift */,
 				46BA23792B03D6BC001FA81E /* Assets.xcassets */,
@@ -450,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Passwordr/Passwordr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Passwordr/Preview Content\"";
@@ -482,6 +485,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Passwordr/Passwordr.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Passwordr/Preview Content\"";
