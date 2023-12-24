@@ -34,15 +34,10 @@ struct CredentialsView: View {
 
                             PasswordCell(credential: credential, password: .constant(credential.password))
                         } label: {
-                            HStack {
-                                Text(credential.title)
-                                Spacer()
-                            }
+                            CredentialItem(credential: credential)
                         }
                     }
-                    .tint(Color(.myGreen))
-                    .listSectionSpacing(.custom(4))
-
+                    .listSectionSpacing(.custom(8))
                 }
                 .onDelete(perform: { indexSet in
                     for index in indexSet {

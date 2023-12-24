@@ -79,5 +79,6 @@ struct K {
         static let dollarsignCircle = "dollarsign.circle"
         static let triangleFill = "triangle.fill"
         static let sliderHorizontalMenu = "slider.horizontal.3"
+        static let squareAndArrowUp = "square.and.arrow.up"
     }
 }

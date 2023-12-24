@@ -36,6 +36,8 @@
 		46BA238A2B04ED82001FA81E /* HomeViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA23892B04ED82001FA81E /* HomeViewViewModel.swift */; };
 		46BA238C2B04EE2A001FA81E /* FaceIDTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BA238B2B04EE2A001FA81E /* FaceIDTitle.swift */; };
 		46EAB8C72B1158BC001357EA /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EAB8C62B1158BC001357EA /* K.swift */; };
+		46FCB9432B38E9C7005E9300 /* CredentialItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9422B38E9C7005E9300 /* CredentialItem.swift */; };
+		46FCB9452B38EBBE005E9300 /* ActivityShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9442B38EBBE005E9300 /* ActivityShareView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +73,8 @@
 		46BA238B2B04EE2A001FA81E /* FaceIDTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceIDTitle.swift; sourceTree = "<group>"; };
 		46EAB8C62B1158BC001357EA /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		46FCB9412B330AC8005E9300 /* Passwordr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Passwordr.entitlements; sourceTree = "<group>"; };
+		46FCB9422B38E9C7005E9300 /* CredentialItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialItem.swift; sourceTree = "<group>"; };
+		46FCB9442B38EBBE005E9300 /* ActivityShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityShareView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +96,7 @@
 				46B3C1B82B097AFD00CB98DC /* UsernameCell.swift */,
 				46B3C1BA2B097C0900CB98DC /* PasswordCell.swift */,
 				4640B0452B0A311B00ED2705 /* ToastView.swift */,
+				46FCB9422B38E9C7005E9300 /* CredentialItem.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 				46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */,
 				46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */,
 				46B725C32B12A33700A9CBEF /* CredentialsView.swift */,
+				46FCB9442B38EBBE005E9300 /* ActivityShareView.swift */,
 			);
 			path = CredentialsView;
 			sourceTree = "<group>";
@@ -307,6 +313,7 @@
 				46BA23852B04EBF8001FA81E /* FaceIDButton.swift in Sources */,
 				46B725C92B12AC4B00A9CBEF /* UpdateCredentialViewModel.swift in Sources */,
 				46B725C22B12A2BA00A9CBEF /* AddCredentialViewModel.swift in Sources */,
+				46FCB9432B38E9C7005E9300 /* CredentialItem.swift in Sources */,
 				46EAB8C72B1158BC001357EA /* K.swift in Sources */,
 				465436632B1F70DC00477D72 /* PasswordGeneratorViewModel.swift in Sources */,
 				46B3C1B92B097AFD00CB98DC /* UsernameCell.swift in Sources */,
@@ -317,6 +324,7 @@
 				46BA238A2B04ED82001FA81E /* HomeViewViewModel.swift in Sources */,
 				46329E7E2B17D893003A7EE8 /* AppScreen.swift in Sources */,
 				46B725C42B12A33700A9CBEF /* CredentialsView.swift in Sources */,
+				46FCB9452B38EBBE005E9300 /* ActivityShareView.swift in Sources */,
 				462146D12B28C877006BD985 /* PasswordStrengthView.swift in Sources */,
 				46BA238C2B04EE2A001FA81E /* FaceIDTitle.swift in Sources */,
 				46BA23762B03D6BC001FA81E /* PasswordrApp.swift in Sources */,

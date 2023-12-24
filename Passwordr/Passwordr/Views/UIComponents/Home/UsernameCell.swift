@@ -10,9 +10,9 @@ import SwiftUI
 struct UsernameCell: View {
     let credential: Credential
     var onEditTap: (() -> Void)?
+    private let pasteboard = UIPasteboard.general
     @Binding var username: String
     @State private var credentialToEdit: Credential?
-    private let pasteboard = UIPasteboard.general
     @State private var copied = false {
         didSet {
             if copied {

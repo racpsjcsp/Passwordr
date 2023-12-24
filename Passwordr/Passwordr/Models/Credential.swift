@@ -7,7 +7,6 @@
 
 import Foundation
 import SwiftData
-import CloudKit
 
 @Model
 class Credential: Codable { /// Codable was added to make it work with JSON data for Previewing in Canvas, so required init and encoded were also needed
