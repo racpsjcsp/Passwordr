@@ -40,9 +40,7 @@ struct CredentialsView: View {
                     .listSectionSpacing(.custom(8))
                 }
                 .onDelete(perform: { indexSet in
-                    for index in indexSet {
-                        context.delete(credentials[index])
-                    }
+                    deleteCredential(indexSet: indexSet)
                 })
             }
             .navigationTitle(K.Strings.homeNavTitle)
@@ -71,6 +69,14 @@ struct CredentialsView: View {
                     .tint(Color(.myGreen))
                 })
             }
+        }
+    }
+}
+
+extension CredentialsView {
+    private func deleteCredential(indexSet: IndexSet) {
+        indexSet.forEach { index in
+            context.delete(credentials[index])
         }
     }
 }
