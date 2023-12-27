@@ -6,4 +6,5 @@ Password Manager App. STORE your credentials and GENERATE customizable passwords
 - SwiftData (requires iOS 17+, XCode 15+)
 - Biometry Authentication (FaceID, TouchID)
 - Password strength based on Entropy calculation
-- CloudKit functionality (iCloud sync between devices) 
+- CloudKit functionality (iCloud sync between devices)
+- StoreKit for in app purchases (Tips)
