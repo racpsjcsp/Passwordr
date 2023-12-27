@@ -38,6 +38,12 @@
 		46EAB8C72B1158BC001357EA /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EAB8C62B1158BC001357EA /* K.swift */; };
 		46FCB9432B38E9C7005E9300 /* CredentialItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9422B38E9C7005E9300 /* CredentialItem.swift */; };
 		46FCB9452B38EBBE005E9300 /* ActivityShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9442B38EBBE005E9300 /* ActivityShareView.swift */; };
+		46FCB94A2B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 46FCB9492B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit */; };
+		46FCB94D2B3C721F005E9300 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB94C2B3C721F005E9300 /* TipView.swift */; };
+		46FCB94F2B3C7728005E9300 /* myTipProductIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB94E2B3C7728005E9300 /* myTipProductIdentifiers.swift */; };
+		46FCB9512B3C77B2005E9300 /* TipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9502B3C77B2005E9300 /* TipStore.swift */; };
+		46FCB9532B3C7A52005E9300 /* TipItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9522B3C7A52005E9300 /* TipItemView.swift */; };
+		46FCB9562B3C8AD8005E9300 /* ThanksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9552B3C8AD8005E9300 /* ThanksView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +81,12 @@
 		46FCB9412B330AC8005E9300 /* Passwordr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Passwordr.entitlements; sourceTree = "<group>"; };
 		46FCB9422B38E9C7005E9300 /* CredentialItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialItem.swift; sourceTree = "<group>"; };
 		46FCB9442B38EBBE005E9300 /* ActivityShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityShareView.swift; sourceTree = "<group>"; };
+		46FCB9492B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyTipsStoreKitConfiguration.storekit; sourceTree = "<group>"; };
+		46FCB94C2B3C721F005E9300 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
+		46FCB94E2B3C7728005E9300 /* myTipProductIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTipProductIdentifiers.swift; sourceTree = "<group>"; };
+		46FCB9502B3C77B2005E9300 /* TipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipStore.swift; sourceTree = "<group>"; };
+		46FCB9522B3C7A52005E9300 /* TipItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipItemView.swift; sourceTree = "<group>"; };
+		46FCB9552B3C8AD8005E9300 /* ThanksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThanksView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +141,16 @@
 			path = PasswordGeneratorView;
 			sourceTree = "<group>";
 		};
+		4628AE9D2B3CC096005BD8C7 /* StoreSkit */ = {
+			isa = PBXGroup;
+			children = (
+				46FCB9492B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit */,
+				46FCB94E2B3C7728005E9300 /* myTipProductIdentifiers.swift */,
+				46FCB9502B3C77B2005E9300 /* TipStore.swift */,
+			);
+			path = StoreSkit;
+			sourceTree = "<group>";
+		};
 		46329E7C2B17D884003A7EE8 /* Enums */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +198,7 @@
 		46BA23742B03D6BC001FA81E /* Passwordr */ = {
 			isa = PBXGroup;
 			children = (
+				4628AE9D2B3CC096005BD8C7 /* StoreSkit */,
 				46FCB9412B330AC8005E9300 /* Passwordr.entitlements */,
 				46BA23752B03D6BC001FA81E /* PasswordrApp.swift */,
 				4640B0472B0C0CFF00ED2705 /* PasswordrSplashView.swift */,
@@ -217,6 +240,8 @@
 			children = (
 				46329E7A2B17D791003A7EE8 /* AppTabView.swift */,
 				46BA23872B04ECE4001FA81E /* HomeView.swift */,
+				46FCB94B2B3C71FE005E9300 /* TipView */,
+				46FCB9542B3C8ACE005E9300 /* ThanksView */,
 				468CDF6F2B1628810030613C /* CredentialsView */,
 				46BA23832B04EBCD001FA81E /* UIComponents */,
 				4623F4AB2B1B8B1A0080D147 /* PasswordGeneratorView */,
@@ -230,6 +255,23 @@
 				46EAB8C62B1158BC001357EA /* K.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		46FCB94B2B3C71FE005E9300 /* TipView */ = {
+			isa = PBXGroup;
+			children = (
+				46FCB94C2B3C721F005E9300 /* TipView.swift */,
+				46FCB9522B3C7A52005E9300 /* TipItemView.swift */,
+			);
+			path = TipView;
+			sourceTree = "<group>";
+		};
+		46FCB9542B3C8ACE005E9300 /* ThanksView */ = {
+			isa = PBXGroup;
+			children = (
+				46FCB9552B3C8AD8005E9300 /* ThanksView.swift */,
+			);
+			path = ThanksView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,6 +334,7 @@
 			files = (
 				46BA237D2B03D6BC001FA81E /* Preview Assets.xcassets in Resources */,
 				4623F4AF2B1B96C50080D147 /* credential.json in Resources */,
+				46FCB94A2B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit in Resources */,
 				46BA237A2B03D6BC001FA81E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +349,7 @@
 				468CDF6E2B1625DE0030613C /* PreviewContainer.swift in Sources */,
 				46B3C1BB2B097C0900CB98DC /* PasswordCell.swift in Sources */,
 				468CDF732B162F420030613C /* CredentialsContainer.swift in Sources */,
+				46FCB9532B3C7A52005E9300 /* TipItemView.swift in Sources */,
 				46B725CB2B12B90900A9CBEF /* Credential.swift in Sources */,
 				46212FA62B07A32900FC2600 /* AddCredentialSheet.swift in Sources */,
 				46BA23882B04ECE4001FA81E /* HomeView.swift in Sources */,
@@ -313,6 +357,7 @@
 				46BA23852B04EBF8001FA81E /* FaceIDButton.swift in Sources */,
 				46B725C92B12AC4B00A9CBEF /* UpdateCredentialViewModel.swift in Sources */,
 				46B725C22B12A2BA00A9CBEF /* AddCredentialViewModel.swift in Sources */,
+				46FCB94F2B3C7728005E9300 /* myTipProductIdentifiers.swift in Sources */,
 				46FCB9432B38E9C7005E9300 /* CredentialItem.swift in Sources */,
 				46EAB8C72B1158BC001357EA /* K.swift in Sources */,
 				465436632B1F70DC00477D72 /* PasswordGeneratorViewModel.swift in Sources */,
@@ -327,9 +372,12 @@
 				46FCB9452B38EBBE005E9300 /* ActivityShareView.swift in Sources */,
 				462146D12B28C877006BD985 /* PasswordStrengthView.swift in Sources */,
 				46BA238C2B04EE2A001FA81E /* FaceIDTitle.swift in Sources */,
+				46FCB9562B3C8AD8005E9300 /* ThanksView.swift in Sources */,
 				46BA23762B03D6BC001FA81E /* PasswordrApp.swift in Sources */,
 				46329E7B2B17D791003A7EE8 /* AppTabView.swift in Sources */,
+				46FCB9512B3C77B2005E9300 /* TipStore.swift in Sources */,
 				46B725C72B12A9D900A9CBEF /* String+Ext.swift in Sources */,
+				46FCB94D2B3C721F005E9300 /* TipView.swift in Sources */,
 				46212FA82B07B11100FC2600 /* UpdateCredentialSheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AppTabView: View {
     @Binding var selection: AppScreen?
+    @StateObject var store: TipStore = TipStore()
 
     var body: some View {
         TabView(selection: $selection) {
@@ -18,6 +19,8 @@ struct AppTabView: View {
                     .tabItem { screen.label }
             }
         }
+        .tint(.myBlue)
+        .environmentObject(store)
     }
 }
 

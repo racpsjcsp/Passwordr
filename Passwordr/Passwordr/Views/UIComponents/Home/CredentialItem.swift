@@ -18,13 +18,13 @@ struct CredentialItem: View {
                     showShareSheet.toggle()
                 }
                 .offset(x: -10, y: 0)
-                .foregroundStyle(Color(.myGreen))
+                .foregroundStyle(Color(.myBlue))
                 .sheet(isPresented: $showShareSheet) {
                     ActivityView(credential: credential)
                 }
 
             Text(credential.title)
-                .foregroundStyle(Color(.myPink))
+                .foregroundStyle(Color(.myBlue))
 
             Spacer()
         }

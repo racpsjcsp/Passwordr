@@ -1,0 +1,158 @@
+{
+  "identifier" : "4B4754D8",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+    {
+      "displayPrice" : "0.99",
+      "familyShareable" : false,
+      "internalID" : "8E0D4CEA",
+      "localizations" : [
+        {
+          "description" : "I am addicted to coffee ☕️",
+          "displayName" : "Gimme a coffee",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Sou viciado em café ☕️",
+          "displayName" : "Me dá um café",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.rafaelplinio.Passwordr.CoffeeTip",
+      "referenceName" : "Coffee Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "1.99",
+      "familyShareable" : false,
+      "internalID" : "1755C794",
+      "localizations" : [
+        {
+          "description" : "Love cookies 🍪",
+          "displayName" : "Gimme a cookie",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Adoro cookies 🍪",
+          "displayName" : "Me dá um cookie",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.rafaelplinio.Passwordr.CookieTip",
+      "referenceName" : "Cookie Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "3.99",
+      "familyShareable" : false,
+      "internalID" : "A064254F",
+      "localizations" : [
+        {
+          "description" : "Pizza is the best 🍕",
+          "displayName" : "Gimme a pizza",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Pizza é o melhor 🍕",
+          "displayName" : "Me dá uma pizza",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.rafaelplinio.Passwordr.PizzaTip",
+      "referenceName" : "Pizza Tip",
+      "type" : "Consumable"
+    },
+    {
+      "displayPrice" : "10.99",
+      "familyShareable" : false,
+      "internalID" : "524652EA",
+      "localizations" : [
+        {
+          "description" : "Need the nutrients 🍱",
+          "displayName" : "Gimme a proper meal",
+          "locale" : "en_US"
+        },
+        {
+          "description" : "Preciso dos nutrientes 🍱",
+          "displayName" : "Me dá uma refeição",
+          "locale" : "pt_BR"
+        }
+      ],
+      "productID" : "com.rafaelplinio.Passwordr.MealTip",
+      "referenceName" : "Meal Tip",
+      "type" : "Consumable"
+    }
+  ],
+  "settings" : {
+    "_billingIssuesEnabled" : false,
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_US",
+    "_storefront" : "USA",
+    "_storeKitError" : 0,
+    "_storeKitErrors" : [
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Load Products"
+      },
+      {
+        "current" : {
+          "index" : 0,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Purchase"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Verification"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "App Store Sync"
+      },
+      {
+        "current" : {
+          "index" : 2,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "Subscription Status"
+      },
+      {
+        "current" : {
+          "index" : 0,
+          "type" : "generic"
+        },
+        "enabled" : false,
+        "name" : "App Transaction"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Manage Subscriptions Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Refund Request Sheet"
+      },
+      {
+        "current" : null,
+        "enabled" : false,
+        "name" : "Offer Code Redeem Sheet"
+      }
+    ]
+  },
+  "subscriptionGroups" : [
+
+  ],
+  "version" : {
+    "major" : 3,
+    "minor" : 0
+  }
+}

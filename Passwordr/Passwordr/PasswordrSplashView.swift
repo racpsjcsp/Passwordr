@@ -10,26 +10,26 @@ import SwiftUI
 struct PasswordrSplashView: View {
     @State var isActive: Bool = false
 
-        var body: some View {
-            ZStack {
-                Color.black
-                    .ignoresSafeArea()
-                if isActive {
-                    HomeView()
-                } else {
-                    Image(K.Image.passwordrLogo)
-                        .resizable()
-                        .scaledToFit()
-                }
+    var body: some View {
+        ZStack {
+            Color.black
+                .ignoresSafeArea()
+            if isActive {
+                HomeView()
+            } else {
+                Image(K.Image.passwordrLogo)
+                    .resizable()
+                    .scaledToFit()
             }
-            .onAppear {
-                DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    withAnimation {
-                        self.isActive = true
-                    }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
+                withAnimation {
+                    self.isActive = true
                 }
             }
         }
+    }
 }
 
 #Preview {

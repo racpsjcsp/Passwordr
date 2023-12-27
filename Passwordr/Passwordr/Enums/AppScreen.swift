@@ -21,13 +21,10 @@ extension AppScreen {
         switch self {
         case .credentials:
             Label(K.Strings.homeNavTitle, systemImage: K.Image.newspaper)
-                .foregroundStyle(.myGreen)
         case .passwordGenerator:
             Label(K.Strings.passwordGenerator, systemImage: K.Image.wandAndStars)
-                .foregroundStyle(.myGreen)
         case .tipMe:
             Label(K.Strings.tipMe, systemImage: K.Image.dollarsignCircle)
-                .foregroundStyle(.myGreen)
         }
     }
 
@@ -40,9 +37,8 @@ extension AppScreen {
             case .passwordGenerator:
                 PasswordGeneratorView()
             case .tipMe:
-                Text("Tip Me under construction!")
+                TipView()
             }
         }
-
     }
 }
