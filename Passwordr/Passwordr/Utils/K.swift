@@ -76,7 +76,7 @@ struct K {
     }
 
     struct Image {
-        static let passwordrLogo = "passwordrLogo"
+        static let lockShieldLogo = "lock.shield"
         static let faceID = "faceid"
         static let newspaper = "newspaper"
         static let plus = "plus"

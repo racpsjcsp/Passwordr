@@ -17,9 +17,11 @@ struct PasswordrSplashView: View {
             if isActive {
                 HomeView()
             } else {
-                Image(K.Image.passwordrLogo)
+                Image(systemName: K.Image.lockShieldLogo)
                     .resizable()
-                    .scaledToFit()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: 200, height: 200)
+                    .foregroundStyle(.myBlue)
             }
         }
         .onAppear {

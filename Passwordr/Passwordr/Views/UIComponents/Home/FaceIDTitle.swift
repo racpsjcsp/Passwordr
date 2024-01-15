@@ -11,7 +11,8 @@ struct FaceIDTitle: View {
     var body: some View {
         Text(K.Strings.appTitle)
             .font(.largeTitle)
-            .foregroundStyle(Color(.myGreen))
+            .foregroundStyle(Color(.myBlue))
+            .bold()
     }
 }
 

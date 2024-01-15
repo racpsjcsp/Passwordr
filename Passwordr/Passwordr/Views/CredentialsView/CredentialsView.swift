@@ -54,7 +54,7 @@ struct CredentialsView: View {
                     isShowingCredentialSheet = true
                 }
             }
-            .tint(Color(.myGreen))
+            .tint(Color(.myBlue))
         }
         .overlay {
             if credentials.isEmpty {
@@ -66,7 +66,7 @@ struct CredentialsView: View {
                     Button(K.Strings.homeAddCredentialTitle) {
                         isShowingCredentialSheet = true
                     }
-                    .tint(Color(.myGreen))
+                    .tint(Color(.myBlue))
                 })
             }
         }

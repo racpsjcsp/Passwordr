@@ -19,25 +19,25 @@ struct AddCredentialSheet: View {
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .textFieldStyle(.roundedBorder)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(!viewModel.title.isEmpty ? Color(
+                    .overlay(RoundedRectangle(cornerRadius: 6).stroke(!viewModel.title.isEmpty ? Color(
                         .myGreen) : Color(.myGray), lineWidth: 1))
                 TextField(K.Strings.username, text: $viewModel.username)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .textFieldStyle(.roundedBorder)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(!viewModel.username.isEmpty ? Color(
+                    .overlay(RoundedRectangle(cornerRadius: 6).stroke(!viewModel.username.isEmpty ? Color(
                         .myGreen) : !viewModel.isFormComplete ? Color(.myGray) : Color(.myGreen), lineWidth: 1))
                 TextField(K.Strings.password, text: $viewModel.password)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .textFieldStyle(.roundedBorder)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(!viewModel.password.isEmpty ? Color(
+                    .overlay(RoundedRectangle(cornerRadius: 6).stroke(!viewModel.password.isEmpty ? Color(
                         .myGreen) : !viewModel.isFormComplete ? Color(.myGray) : Color(.myGreen), lineWidth: 1))
                 TextField(K.Strings.oldPassword, text: $viewModel.oldPassword)
                     .textInputAutocapitalization(.never)
                     .autocorrectionDisabled()
                     .textFieldStyle(.roundedBorder)
-                    .overlay(RoundedRectangle(cornerRadius: 10).stroke(Color(.myGray), lineWidth: 1))
+                    .overlay(RoundedRectangle(cornerRadius: 6).stroke(Color(.myGray), lineWidth: 1))
 
                 Section(footer:
                             HStack {

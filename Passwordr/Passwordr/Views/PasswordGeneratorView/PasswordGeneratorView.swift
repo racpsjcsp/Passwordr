@@ -21,6 +21,7 @@ struct PasswordGeneratorView: View {
     @State private var strengthDescription = ""
     private var clipboardString: String = ""
     @ObservedObject var viewModel = PasswordGeneratorViewModel()
+    @Environment(\.colorScheme) var colorScheme
     @State private var copied = false {
         didSet {
             if copied {
@@ -99,13 +100,12 @@ struct PasswordGeneratorView: View {
                                 } else {
                                     ForEach(characters, id: \.self) { character in
                                         Text(character)
-                                            .foregroundColor(viewModel.specialCharactersArray.contains(character) ? Color(.myBlue) : viewModel.numbersArray.contains(character) ? Color(.myOrange) : viewModel.alphabet.contains(character) ? Color(.myGray) : Color(.myPink))
+                                            .foregroundColor(viewModel.specialCharactersArray.contains(character) ? Color(.myBlue) : viewModel.numbersArray.contains(character) ? Color(.myOrange) : viewModel.alphabet.contains(character) ? Color(colorScheme == .dark ? .myWhite : .myBlack) : Color(.myPink))
                                             .font(charCount > 25 ? .system(size: 15) : .body)
                                     }
                                 }
+
                                 Spacer()
-
-
                             }
                             .overlay(alignment: .trailing) {
                                 Button {
