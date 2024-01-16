@@ -13,7 +13,7 @@ struct K {
         // Auth Screen
         static let appTitle = "GetMyPass"
         static let authScreenTitle = "Login with Biometry"
-        static let unlockPasswordr = "To unlock Passwordr"
+        static let unlockPasswordr = "To unlock GetMyPass"
 
         // HomeView
         static let homeNavTitle = "Credentials"
