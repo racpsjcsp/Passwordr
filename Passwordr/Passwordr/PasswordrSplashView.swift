@@ -19,8 +19,7 @@ struct PasswordrSplashView: View {
             } else {
                 Image(systemName: K.Image.lockShieldLogo)
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 200, height: 200)
+                    .frame(width: 280, height: 250)
                     .foregroundStyle(.myBlue)
             }
         }

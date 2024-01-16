@@ -83,6 +83,7 @@ extension CredentialsView {
     }
 }
 
+#if DEBUG
 #Preview(K.Strings.credentialScreenEmpty) {
     let preview = PreviewContainer([Credential.self])
     return CredentialsView().modelContainer(preview.container)
@@ -95,3 +96,5 @@ extension CredentialsView {
     }
     return CredentialsView().modelContainer(preview.container)
 }
+#endif
+

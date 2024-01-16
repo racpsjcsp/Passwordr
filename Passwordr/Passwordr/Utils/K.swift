@@ -11,7 +11,7 @@ struct K {
     struct Strings {
 
         // Auth Screen
-        static let appTitle = "Passwordr"
+        static let appTitle = "GetMyPass"
         static let authScreenTitle = "Login with Biometry"
         static let unlockPasswordr = "To unlock Passwordr"
 
