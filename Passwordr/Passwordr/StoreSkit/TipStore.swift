@@ -106,8 +106,6 @@ private extension TipStore {
             action = .failed(.system(error))
             print(#function)
             print(error)
-            print("bolinho")
-
         }
     }
 
