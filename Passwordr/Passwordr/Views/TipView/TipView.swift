@@ -13,41 +13,43 @@ struct TipView: View {
     @State private var showThanks = false
 
     var body: some View {
-        VStack(spacing: 1) {
-            Text(K.Strings.tipViewTitle)
-                .font(.system(.title2, design: .rounded).bold())
-                .foregroundColor(.myBlue)
-                .padding()
+        ScrollView {
+            VStack(spacing: 1) {
+                Text(K.Strings.tipViewTitle)
+                    .font(.system(.title2, design: .rounded).bold())
+                    .foregroundColor(.myBlue)
+                    .padding()
 
-            Text(K.Strings.tipViewDescription)
-                .font(.system(.body, design: .rounded))
-                .multilineTextAlignment(.center)
-                .padding(.bottom, 16)
+                Text(K.Strings.tipViewDescription)
+                    .font(.system(.body, design: .rounded))
+                    .multilineTextAlignment(.center)
+                    .padding(.bottom, 16)
 
-            ForEach(store.items, id: \.self) { item in
-                TipItemView(item: item)
-                    .padding([.top, .bottom], 4)
-            }
-        }
-        .onChange(of: store.action) {
-            if store.action == .successful {
-                DispatchQueue.main.asyncAfter(deadline: .now()) {
-                    showThanks.toggle()
-                    store.reset()
+                ForEach(store.items, id: \.self) { item in
+                    TipItemView(item: item)
+                        .padding([.top, .bottom], 4)
                 }
             }
-        }
-        .overlay(alignment: .bottom) {
-            if showThanks {
-                ThanksView {
-                    showThanks.toggle()
+            .onChange(of: store.action) {
+                if store.action == .successful {
+                    DispatchQueue.main.asyncAfter(deadline: .now()) {
+                        showThanks.toggle()
+                        store.reset()
+                    }
                 }
-                .transition(.move(edge: .bottom).combined(with: .opacity))
             }
-        }
-        .animation(.easeInOut(duration: 1.0), value: showThanks)
-        .alert(isPresented: $store.hasError, error: store.error) {}
+            .overlay(alignment: .bottom) {
+                if showThanks {
+                    ThanksView {
+                        showThanks.toggle()
+                    }
+                    .transition(.move(edge: .bottom).combined(with: .opacity))
+                }
+            }
+            .animation(.easeInOut(duration: 1.0), value: showThanks)
+            .alert(isPresented: $store.hasError, error: store.error) {}
         .padding([.leading, .trailing], 16)
+        }
     }
 }
 #Preview {

@@ -22,6 +22,11 @@ class AddCredentialViewModel: ObservableObject {
         if title.isEmpty || username.isEmpty || password.isEmpty {
             return false
         }
+
+        if password.containsEmoji() {
+            return false
+        }
+        
         return true
     }
 

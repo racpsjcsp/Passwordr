@@ -31,8 +31,10 @@ struct CredentialsView: View {
                                                           oldPassword: credential.oldPassword,
                                                           creationDate: credential.creationDate,
                                                           lastChanged: credential.lastChanged))
+                                .deleteDisabled(true)
 
                             PasswordCell(credential: credential, password: .constant(credential.password))
+                                .deleteDisabled(true)
                         } label: {
                             CredentialItem(credential: credential)
                         }

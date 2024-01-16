@@ -37,8 +37,8 @@ struct ActivityView: UIViewControllerRepresentable {
     func makeUIViewController(context: Context) -> UIActivityViewController {
         let sharedTitle = "Here is my credentials for \(credential.title):"
         let sharedInfo = "Username: \(credential.username)\nPassword: \(credential.password)"
-        let test = "\(sharedTitle)\n\n\(sharedInfo)"
-        let activityViewController = UIActivityViewController(activityItems: [test], applicationActivities: nil)
+        let string = "\(sharedTitle)\n\n\(sharedInfo)"
+        let activityViewController = UIActivityViewController(activityItems: [string], applicationActivities: nil)
         return activityViewController
     }
 

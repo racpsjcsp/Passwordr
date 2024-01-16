@@ -38,4 +38,8 @@ extension String {
         UIPasteboard.general.setItems([[UIPasteboard.typeAutomatic: string]],
                                       options: [UIPasteboard.OptionsKey.expirationDate: expireDate])
     }
+
+    func containsEmoji() -> Bool {
+        contains { $0.isEmoji }
+    }
 }

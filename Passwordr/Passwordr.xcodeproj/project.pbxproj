@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		461538FA2B57075A00152EB5 /* Character+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 461538F92B57075A00152EB5 /* Character+Ext.swift */; };
 		46212FA62B07A32900FC2600 /* AddCredentialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */; };
 		46212FA82B07B11100FC2600 /* UpdateCredentialSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */; };
 		462146D12B28C877006BD985 /* PasswordStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 462146D02B28C877006BD985 /* PasswordStrengthView.swift */; };
@@ -47,6 +48,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		461538F92B57075A00152EB5 /* Character+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character+Ext.swift"; sourceTree = "<group>"; };
 		46212FA52B07A32900FC2600 /* AddCredentialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCredentialSheet.swift; sourceTree = "<group>"; };
 		46212FA72B07B11100FC2600 /* UpdateCredentialSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateCredentialSheet.swift; sourceTree = "<group>"; };
 		462146D02B28C877006BD985 /* PasswordStrengthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordStrengthView.swift; sourceTree = "<group>"; };
@@ -175,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				46B725C62B12A9D900A9CBEF /* String+Ext.swift */,
+				461538F92B57075A00152EB5 /* Character+Ext.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -301,7 +304,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1430;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
 					46BA23712B03D6BC001FA81E = {
@@ -379,6 +382,7 @@
 				46B725C72B12A9D900A9CBEF /* String+Ext.swift in Sources */,
 				46FCB94D2B3C721F005E9300 /* TipView.swift in Sources */,
 				46212FA82B07B11100FC2600 /* UpdateCredentialSheet.swift in Sources */,
+				461538FA2B57075A00152EB5 /* Character+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
