@@ -22,6 +22,7 @@
 		468CDF6E2B1625DE0030613C /* PreviewContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CDF6D2B1625DE0030613C /* PreviewContainer.swift */; };
 		468CDF732B162F420030613C /* CredentialsContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CDF722B162F420030613C /* CredentialsContainer.swift */; };
 		468CDF752B16323A0030613C /* DefaultsJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 468CDF742B16323A0030613C /* DefaultsJSON.swift */; };
+		46B13E692B571A8F005174E2 /* MyTipsStoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 46B13E682B571A8F005174E2 /* MyTipsStoreKitConfiguration.storekit */; };
 		46B3C1B92B097AFD00CB98DC /* UsernameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3C1B82B097AFD00CB98DC /* UsernameCell.swift */; };
 		46B3C1BB2B097C0900CB98DC /* PasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B3C1BA2B097C0900CB98DC /* PasswordCell.swift */; };
 		46B725C22B12A2BA00A9CBEF /* AddCredentialViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B725C12B12A2BA00A9CBEF /* AddCredentialViewModel.swift */; };
@@ -39,7 +40,6 @@
 		46EAB8C72B1158BC001357EA /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46EAB8C62B1158BC001357EA /* K.swift */; };
 		46FCB9432B38E9C7005E9300 /* CredentialItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9422B38E9C7005E9300 /* CredentialItem.swift */; };
 		46FCB9452B38EBBE005E9300 /* ActivityShareView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9442B38EBBE005E9300 /* ActivityShareView.swift */; };
-		46FCB94A2B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit in Resources */ = {isa = PBXBuildFile; fileRef = 46FCB9492B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit */; };
 		46FCB94D2B3C721F005E9300 /* TipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB94C2B3C721F005E9300 /* TipView.swift */; };
 		46FCB94F2B3C7728005E9300 /* myTipProductIdentifiers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB94E2B3C7728005E9300 /* myTipProductIdentifiers.swift */; };
 		46FCB9512B3C77B2005E9300 /* TipStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46FCB9502B3C77B2005E9300 /* TipStore.swift */; };
@@ -64,6 +64,7 @@
 		468CDF722B162F420030613C /* CredentialsContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialsContainer.swift; sourceTree = "<group>"; };
 		468CDF742B16323A0030613C /* DefaultsJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultsJSON.swift; sourceTree = "<group>"; };
 		468FB9692B065C6D00D215C8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		46B13E682B571A8F005174E2 /* MyTipsStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyTipsStoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		46B3C1B82B097AFD00CB98DC /* UsernameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsernameCell.swift; sourceTree = "<group>"; };
 		46B3C1BA2B097C0900CB98DC /* PasswordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCell.swift; sourceTree = "<group>"; };
 		46B725C12B12A2BA00A9CBEF /* AddCredentialViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCredentialViewModel.swift; sourceTree = "<group>"; };
@@ -83,7 +84,6 @@
 		46FCB9412B330AC8005E9300 /* Passwordr.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Passwordr.entitlements; sourceTree = "<group>"; };
 		46FCB9422B38E9C7005E9300 /* CredentialItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CredentialItem.swift; sourceTree = "<group>"; };
 		46FCB9442B38EBBE005E9300 /* ActivityShareView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityShareView.swift; sourceTree = "<group>"; };
-		46FCB9492B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = MyTipsStoreKitConfiguration.storekit; sourceTree = "<group>"; };
 		46FCB94C2B3C721F005E9300 /* TipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipView.swift; sourceTree = "<group>"; };
 		46FCB94E2B3C7728005E9300 /* myTipProductIdentifiers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = myTipProductIdentifiers.swift; sourceTree = "<group>"; };
 		46FCB9502B3C77B2005E9300 /* TipStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipStore.swift; sourceTree = "<group>"; };
@@ -146,8 +146,8 @@
 		4628AE9D2B3CC096005BD8C7 /* StoreSkit */ = {
 			isa = PBXGroup;
 			children = (
-				46FCB9492B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit */,
 				46FCB94E2B3C7728005E9300 /* myTipProductIdentifiers.swift */,
+				46B13E682B571A8F005174E2 /* MyTipsStoreKitConfiguration.storekit */,
 				46FCB9502B3C77B2005E9300 /* TipStore.swift */,
 			);
 			path = StoreSkit;
@@ -337,7 +337,7 @@
 			files = (
 				46BA237D2B03D6BC001FA81E /* Preview Assets.xcassets in Resources */,
 				4623F4AF2B1B96C50080D147 /* credential.json in Resources */,
-				46FCB94A2B3C6FBD005E9300 /* MyTipsStoreKitConfiguration.storekit in Resources */,
+				46B13E692B571A8F005174E2 /* MyTipsStoreKitConfiguration.storekit in Resources */,
 				46BA237A2B03D6BC001FA81E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
