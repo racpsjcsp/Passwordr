@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ToastView: View {
     @State var toastMessage: String
+    @Environment(\.colorScheme) var colorScheme
 
     @State var copied: Bool = false {
         didSet {
@@ -28,7 +29,7 @@ struct ToastView: View {
                 Text(toastMessage)
                     .frame(width: 250, height: 30, alignment: .center)
                     .foregroundStyle(.red)
-                    .background(Capsule())
+                    .background(Capsule().fill(colorScheme == .light ? .myLightGray : .myWhite))
                     .position(x: geo.frame(in: .local).width/2)
                     .transition(.move(edge: .top))
                     .padding(.top)
