@@ -45,7 +45,7 @@ struct K {
         // TipView
         static let tipViewNavTitle = "Tip Me"
         static let tipViewTitle = "Enjoying the App? 🤓"
-        static let tipViewDescription = "Passwordr is a free App, which I created for my own use because I don't need any extra complicated feature as of now. If that changes then I will, overtime, implement new features. If you like it and are feeling generous, consider tipping. It will surely help me to keep the app up to date. Any tip will be very much appreciated."
+        static let tipViewDescription = "GetMyPass is a free App, which I created for my own use because I don't need any extra complicated feature as of now. If that changes then I will, overtime, implement new features. If you like it and are feeling generous, consider tipping. It will surely help me to keep the app up to date. Any tip will be very much appreciated."
 
         // ThanksView
         static let thanksViewTitle = "Thank You 💕"
